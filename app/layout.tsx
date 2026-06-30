@@ -14,6 +14,12 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: "Sam Daniel — Worship Leader · Artist · Producer",
   description: "Independent recording artist, songwriter, producer and worship leader based in London, UK.",
+  themeColor: "#050505",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "Sam Daniel",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
