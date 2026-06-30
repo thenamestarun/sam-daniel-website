@@ -80,20 +80,20 @@ const team = [
 
 export default function StudioPage() {
   return (
-    <div className="pt-28 pb-24">
+    <div className="pt-20 pb-24">
 
       {/* Hero */}
-      <div className="relative h-[50vh] overflow-hidden mb-20">
+      <div className="relative h-[45vh] sm:h-[50vh] overflow-hidden mb-12 sm:mb-20">
         <Image src="/images/studio/studio-main.png" alt="Revival Sounds Studio" fill className="object-cover object-center" priority />
         <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/60 via-black/30 to-[#050505]" />
-        <div className="absolute bottom-10 left-0 right-0 px-8 max-w-5xl mx-auto">
+        <div className="absolute bottom-6 sm:bottom-10 left-0 right-0 px-4 sm:px-8 max-w-5xl mx-auto">
           <p className="text-xs tracking-widest uppercase text-[#f43f8a] mb-2">Revival Sounds</p>
-          <h1 className="text-6xl md:text-7xl font-bold tracking-tighter uppercase">Studio</h1>
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tighter uppercase">Studio</h1>
         </div>
       </div>
 
       {/* Intro */}
-      <div className="max-w-3xl mx-auto px-6 mb-20">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 mb-12 sm:mb-20">
         <p className="text-white/60 text-lg leading-relaxed">
           Revival Sounds is Sam Daniel's creative hub — offering professional recording, production,
           tuition, video and design services to artists, churches, and creatives. Based in London, UK.
@@ -101,7 +101,7 @@ export default function StudioPage() {
       </div>
 
       {/* Services */}
-      <div className="max-w-5xl mx-auto px-6 mb-24">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 mb-16 sm:mb-24">
         <div className="flex items-center gap-4 mb-10">
           <span className="text-xs tracking-widest uppercase text-white/35">What We Offer</span>
           <div className="h-px flex-1 bg-white/8" />
@@ -118,7 +118,7 @@ export default function StudioPage() {
       </div>
 
       {/* Team */}
-      <div className="max-w-5xl mx-auto px-6 mb-20">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 mb-16 sm:mb-20">
         <div className="flex items-center gap-4 mb-10">
           <span className="text-xs tracking-widest uppercase text-white/35">The Team</span>
           <div className="h-px flex-1 bg-white/8" />
@@ -152,7 +152,7 @@ export default function StudioPage() {
       </div>
 
       {/* CTA */}
-      <div className="max-w-3xl mx-auto px-6 text-center">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
         <p className="text-white/55 mb-1 font-medium text-lg">Ready to create something?</p>
         <p className="text-white/35 text-sm mb-8">Get in touch to book a session or discuss your project.</p>
         <a href="mailto:revivalsoundsuk@gmail.com" className="inline-block px-8 py-3.5 rounded-full bg-[#f43f8a] text-white font-semibold hover:bg-[#ec4899] transition-all">

@@ -244,11 +244,11 @@ export default function EventsPage() {
   const past = events.filter((e) => isPast(e.sortDate)).reverse();
 
   return (
-    <div className="pt-28 pb-20 px-6 max-w-4xl mx-auto">
-      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
+    <div className="pt-24 pb-20 px-4 sm:px-6 max-w-4xl mx-auto">
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
         <div>
           <p className="text-[#f43f8a] text-xs tracking-widest uppercase mb-3 font-medium">2026 Tour</p>
-          <h1 className="text-7xl font-bold tracking-tighter uppercase">Events</h1>
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tighter uppercase">Events</h1>
         </div>
         {past.length > 0 && (
           <SharpButton onClick={() => setShowPast(!showPast)} active={showPast}>

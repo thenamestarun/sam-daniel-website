@@ -41,18 +41,18 @@ export default async function AboutPage() {
     <div className="pt-20 pb-20">
 
       {/* Full-bleed hero */}
-      <div className="relative h-[65vh] overflow-hidden mb-16">
+      <div className="relative h-[55vh] sm:h-[65vh] overflow-hidden mb-10 sm:mb-16">
         <Image src={heroImageUrl} alt="Sam Daniel" fill className="object-cover object-top" priority sizes="100vw" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/40 via-transparent to-[#050505]" />
-        <div className="absolute bottom-10 left-0 right-0 px-8 max-w-6xl mx-auto">
+        <div className="absolute bottom-6 sm:bottom-10 left-0 right-0 px-4 sm:px-8 max-w-6xl mx-auto">
           <p className="text-[#f43f8a] text-xs tracking-widest uppercase mb-2 font-medium">Story</p>
-          <h1 className="text-7xl md:text-8xl font-bold tracking-tighter uppercase leading-none">About Sam</h1>
+          <h1 className="text-5xl sm:text-6xl md:text-8xl font-bold tracking-tighter uppercase leading-none">About Sam</h1>
         </div>
       </div>
 
       {/* Bio */}
       <FadeIn>
-        <div className="max-w-3xl mx-auto px-6 flex flex-col gap-6 text-white/55 text-base leading-relaxed">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 flex flex-col gap-6 text-white/55 text-sm sm:text-base leading-relaxed">
           {data?.bioSections ? (
             <PortableText value={data.bioSections} components={portableComponents} />
           ) : (
@@ -63,7 +63,7 @@ export default async function AboutPage() {
 
       {/* Photo grid — bigger, edge to edge feel */}
       <FadeIn delay={80}>
-        <div className="max-w-6xl mx-auto px-6 mt-16 grid grid-cols-3 gap-3">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 mt-10 sm:mt-16 grid grid-cols-3 gap-2 sm:gap-3">
           {photos.map((src, i) => (
             <div key={i} className={`relative rounded-sm overflow-hidden ${i === 1 ? "aspect-[3/5]" : "aspect-[3/4]"}`}>
               <BlurImage
@@ -80,7 +80,7 @@ export default async function AboutPage() {
 
       {/* CTA */}
       <FadeIn delay={120}>
-        <div className="max-w-3xl mx-auto px-6 mt-12 flex flex-col sm:flex-row gap-3">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 mt-8 sm:mt-12 flex flex-col sm:flex-row gap-3">
           <a href="mailto:info@sam-daniel.com" className="px-6 py-3 rounded-sm text-sm font-semibold text-center tracking-wide transition-all backdrop-blur-md bg-[#f43f8a]/15 border border-[#f43f8a]/30 text-[#f43f8a] hover:bg-[#f43f8a]/25 hover:border-[#f43f8a]/50">
             Ministry Booking
           </a>

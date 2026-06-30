@@ -10,34 +10,33 @@ const videos = [
 
 export default function VideosPage() {
   return (
-    <div className="pt-32 pb-24 px-6 max-w-6xl mx-auto">
-      <div className="mb-14">
-        <p className="text-xs tracking-widest uppercase text-white/35 mb-3">Watch</p>
-        <h1 className="text-6xl font-bold tracking-tight">Videos</h1>
+    <div className="pt-24 pb-24 px-4 sm:px-6 max-w-6xl mx-auto">
+      <div className="mb-10">
+        <p className="text-xs tracking-widest uppercase text-[#f43f8a] mb-3 font-medium">Watch</p>
+        <h1 className="text-5xl sm:text-6xl font-bold tracking-tighter uppercase">Videos</h1>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
         {videos.map((v) => (
-          <div key={v.id} className="group flex flex-col gap-3">
-            <div className="relative aspect-video rounded-2xl overflow-hidden bg-white/5">
-              <iframe
-                src={`https://www.youtube.com/embed/${v.id}?rel=0&modestbranding=1`}
-                title={v.title}
-                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="absolute inset-0 w-full h-full"
-              />
-            </div>
+          <div key={v.id} className="relative w-full rounded-sm overflow-hidden border border-white/6" style={{ paddingBottom: "56.25%" }}>
+            <iframe
+              src={`https://www.youtube.com/embed/${v.id}?rel=0&modestbranding=1`}
+              title={v.title}
+              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              loading="lazy"
+              className="absolute inset-0 w-full h-full"
+            />
           </div>
         ))}
       </div>
 
-      <div className="mt-16 text-center">
+      <div className="mt-12 text-center">
         <a
           href="https://youtube.com/samdanielmusic"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block px-6 py-3 rounded-full border border-white/20 text-white text-sm hover:bg-white/6 hover:border-[#f43f8a]/30 transition-all"
+          className="inline-block px-6 py-3 rounded-sm border border-white/15 text-white/60 text-sm tracking-wide hover:bg-white/6 hover:text-white transition-all"
         >
           Subscribe on YouTube →
         </a>

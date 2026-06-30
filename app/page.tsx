@@ -48,25 +48,25 @@ export default async function Home() {
   return (
     <div className="pt-20">
 
-      {/* Hero — full bleed, massive type */}
-      <section className="relative min-h-[92vh] flex flex-col items-center justify-center text-center px-6 gap-5 overflow-hidden">
+      {/* Hero */}
+      <section className="relative min-h-[92vh] flex flex-col items-center justify-center text-center px-4 gap-4 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image src="/images/hero.jpg" alt="Sam Daniel" fill className="object-cover object-center opacity-20" priority sizes="100vw" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-[#080808]" />
         </div>
-        <div className="relative z-10 flex flex-col items-center gap-5">
+        <div className="relative z-10 flex flex-col items-center gap-4 w-full max-w-5xl mx-auto">
           <span className="text-[#f43f8a] text-xs tracking-[0.35em] uppercase font-medium">London, UK</span>
-          <h1 className="text-[clamp(4rem,14vw,11rem)] font-bold tracking-tighter leading-[0.9] uppercase">Sam<br/>Daniel</h1>
-          <p className="text-white/40 text-sm md:text-base tracking-[0.25em] uppercase font-light">{tagline}</p>
-          <div className="flex items-center gap-3 mt-3">
-            <Link href="/music" className="px-6 py-2.5 text-sm font-semibold tracking-wide backdrop-blur-md bg-[#f43f8a]/15 border border-[#f43f8a]/30 text-[#f43f8a] hover:bg-[#f43f8a]/25 hover:border-[#f43f8a]/50 transition-all rounded-sm">
+          <h1 className="text-[clamp(3.2rem,14vw,11rem)] font-bold tracking-tighter leading-[0.88] uppercase">Sam<br/>Daniel</h1>
+          <p className="text-white/40 text-xs md:text-sm tracking-[0.2em] uppercase font-light px-4">{tagline}</p>
+          <div className="flex flex-wrap items-center justify-center gap-3 mt-2">
+            <Link href="/music" className="px-5 py-2.5 text-sm font-semibold tracking-wide backdrop-blur-md bg-[#f43f8a]/15 border border-[#f43f8a]/30 text-[#f43f8a] hover:bg-[#f43f8a]/25 hover:border-[#f43f8a]/50 transition-all rounded-sm">
               Listen Now
             </Link>
-            <Link href="/events" className="px-6 py-2.5 border border-white/15 text-white/60 text-sm tracking-wide hover:bg-white/6 hover:text-white transition-all rounded-sm">
+            <Link href="/events" className="px-5 py-2.5 border border-white/15 text-white/60 text-sm tracking-wide hover:bg-white/6 hover:text-white transition-all rounded-sm">
               Upcoming Events
             </Link>
           </div>
-          <div className="flex items-center gap-5 mt-1">
+          <div className="flex flex-wrap items-center justify-center gap-4 mt-1">
             {[
               ["Spotify", "https://open.spotify.com/artist/5qCmiCJixflA5aXSdH8GXB"],
               ["Apple Music", "https://music.apple.com/gb/artist/sam-daniel/1177716347"],
@@ -80,7 +80,7 @@ export default async function Home() {
       </section>
 
       {/* Featured Release */}
-      <section className="max-w-6xl mx-auto px-6 py-16">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 py-14">
         <FadeIn>
           <div className="flex items-center gap-4 mb-8">
             <span className="text-[#f43f8a] text-xs tracking-widest uppercase font-medium">Featured Release</span>
@@ -88,19 +88,21 @@ export default async function Home() {
           </div>
         </FadeIn>
         <FadeIn delay={80}>
-          <div className="flex flex-col md:flex-row gap-8 items-start">
-            <BlurImage
-              src={featured.artworkUrl ?? "/images/music/victorious.jpg"}
-              alt={featured.title ?? "Featured"}
-              width={260}
-              height={260}
-              className="rounded-sm shadow-2xl flex-shrink-0"
-              sizes="260px"
-            />
+          <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 items-start">
+            <div className="w-full sm:w-auto flex-shrink-0">
+              <BlurImage
+                src={featured.artworkUrl ?? "/images/music/victorious.jpg"}
+                alt={featured.title ?? "Featured"}
+                width={260}
+                height={260}
+                className="rounded-sm shadow-2xl w-full sm:w-[220px] md:w-[260px] h-auto"
+                sizes="(max-width: 640px) 100vw, 260px"
+              />
+            </div>
             <div className="flex flex-col gap-4 pt-1">
               <p className="text-white/30 text-xs uppercase tracking-widest">{featured.label ?? "Latest Release"}</p>
-              <h2 className="text-5xl md:text-7xl font-bold tracking-tighter leading-none uppercase">{featured.title}</h2>
-              <div className="flex gap-3 flex-wrap mt-2">
+              <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tighter leading-none uppercase">{featured.title}</h2>
+              <div className="flex gap-3 flex-wrap mt-1">
                 {featured.spotifyUrl && (
                   <a href={featured.spotifyUrl} target="_blank" rel="noopener noreferrer" className="px-5 py-2.5 rounded-sm bg-[#1DB954] text-black font-semibold text-sm hover:opacity-90 transition-opacity tracking-wide">Spotify</a>
                 )}
@@ -114,9 +116,9 @@ export default async function Home() {
       </section>
 
       {/* Featured Video */}
-      <section className="max-w-6xl mx-auto px-6 py-10">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 py-8">
         <FadeIn>
-          <div className="flex items-center gap-4 mb-8">
+          <div className="flex items-center gap-4 mb-6">
             <span className="text-[#f43f8a] text-xs tracking-widest uppercase font-medium">Featured Video</span>
             <div className="h-px flex-1 bg-white/6" />
             <Link href="/videos" className="text-white/35 hover:text-white text-xs tracking-widest uppercase transition-colors flex-shrink-0">All Videos →</Link>
@@ -137,21 +139,21 @@ export default async function Home() {
       </section>
 
       {/* About */}
-      <section className="max-w-6xl mx-auto px-6 py-10">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 py-8">
         <FadeIn>
-          <div className="flex items-center gap-4 mb-8">
+          <div className="flex items-center gap-4 mb-6">
             <span className="text-[#f43f8a] text-xs tracking-widest uppercase font-medium">About</span>
             <div className="h-px flex-1 bg-white/6" />
           </div>
         </FadeIn>
         <FadeIn delay={80}>
           <div className="grid md:grid-cols-2 gap-0 overflow-hidden rounded-sm">
-            <div className="relative aspect-[4/3] md:aspect-auto min-h-[360px]">
+            <div className="relative aspect-[4/3] md:aspect-auto min-h-[280px] md:min-h-[360px]">
               <BlurImage src={aboutImageUrl} alt="Sam Daniel" fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 50vw" />
             </div>
-            <div className="flex flex-col justify-center gap-5 p-8 md:p-12 bg-white/3 border border-white/6">
-              <h2 className="text-4xl md:text-5xl font-bold tracking-tighter uppercase">{aboutHeading}</h2>
-              <p className="text-white/55 leading-relaxed text-sm md:text-base">{aboutText}</p>
+            <div className="flex flex-col justify-center gap-4 p-6 sm:p-8 md:p-12 bg-white/3 border border-white/6">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tighter uppercase">{aboutHeading}</h2>
+              <p className="text-white/55 leading-relaxed text-sm">{aboutText}</p>
               <Link href="/about" className="text-[#f43f8a] hover:text-[#ec4899] text-sm font-medium transition-colors tracking-wide self-start">
                 Read More →
               </Link>
@@ -161,18 +163,18 @@ export default async function Home() {
       </section>
 
       {/* Performance divider */}
-      <section className="relative h-48 md:h-64 overflow-hidden my-16">
+      <section className="relative h-36 sm:h-48 md:h-64 overflow-hidden my-12 sm:my-16">
         <BlurImage src="/images/performance.jpg" alt="Sam Daniel performing" fill className="object-cover object-top opacity-30" sizes="100vw" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#080808] via-transparent to-[#080808]" />
       </section>
 
       {/* Events */}
-      <section className="max-w-6xl mx-auto px-6 py-10 pb-20">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 py-8 pb-20">
         <FadeIn>
           <div className="flex items-center justify-between mb-8">
             <div className="flex items-center gap-4">
               <span className="text-[#f43f8a] text-xs tracking-widest uppercase font-medium">Upcoming</span>
-              <h2 className="text-2xl font-bold tracking-tight uppercase">Events</h2>
+              <h2 className="text-xl sm:text-2xl font-bold tracking-tight uppercase">Events</h2>
             </div>
             <Link href="/events" className="text-white/35 hover:text-white text-xs tracking-widest uppercase transition-colors">View all →</Link>
           </div>
@@ -180,9 +182,9 @@ export default async function Home() {
         <div className="flex flex-col">
           {displayEvents.map((e: { _id: string; name: string; dateLabel?: string; date?: string }, i: number) => (
             <FadeIn key={e._id} delay={i * 50}>
-              <div className="flex items-center justify-between px-0 py-4 border-b border-white/6 hover:bg-white/3 transition-all group cursor-default px-2">
-                <span className="font-medium tracking-wide group-hover:text-[#f43f8a] transition-colors">{e.name}</span>
-                <span className="text-white/35 text-sm font-light tracking-wide">{e.dateLabel ?? e.date}</span>
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between px-2 py-4 border-b border-white/6 hover:bg-white/3 transition-all group cursor-default gap-1 sm:gap-0">
+                <span className="font-medium tracking-wide group-hover:text-[#f43f8a] transition-colors text-sm sm:text-base">{e.name}</span>
+                <span className="text-white/35 text-xs sm:text-sm font-light tracking-wide">{e.dateLabel ?? e.date}</span>
               </div>
             </FadeIn>
           ))}
