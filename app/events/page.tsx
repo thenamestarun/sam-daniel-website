@@ -158,14 +158,14 @@ function isPast(sortDate: string) {
   return new Date(sortDate) < today;
 }
 
-function GlassButton({ children, onClick, active }: { children: React.ReactNode; onClick: () => void; active?: boolean }) {
+function SharpButton({ children, onClick, active }: { children: React.ReactNode; onClick: () => void; active?: boolean }) {
   return (
     <button
       onClick={onClick}
-      className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 backdrop-blur-md border ${
+      className={`px-5 py-2 rounded-sm text-xs font-medium tracking-widest uppercase transition-all duration-200 border ${
         active
-          ? "bg-[#f472b6]/20 border-[#f472b6]/40 text-[#f472b6]"
-          : "bg-white/6 border-white/12 text-white/55 hover:bg-white/10 hover:border-white/20 hover:text-white/80"
+          ? "bg-[#f472b6]/15 border-[#f472b6]/35 text-[#f472b6]"
+          : "bg-white/4 border-white/10 text-white/45 hover:bg-white/8 hover:border-white/18 hover:text-white/80"
       }`}
     >
       {children}
@@ -177,17 +177,13 @@ function EventCard({ event, past }: { event: Event; past?: boolean }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className={`rounded-2xl border transition-all overflow-hidden ${
-      past
-        ? "bg-white/2 border-white/4 opacity-50"
-        : open
-          ? "bg-white/6 border-[#f472b6]/25"
-          : "bg-white/4 border-white/8 hover:border-white/15"
+    <div className={`border-b transition-all overflow-hidden ${
+      past ? "border-white/4 opacity-40" : "border-white/8 hover:border-white/15"
     }`}>
-      <div className="px-6 py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <div className="flex flex-col gap-1.5 flex-1">
-          <p className={`font-bold text-base ${past ? "text-white/50" : ""}`}>{event.name}</p>
-          <div className="flex flex-wrap gap-x-3 gap-y-0.5 text-sm text-white/35">
+      <div className={`py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 ${open ? "pb-4" : ""}`}>
+        <div className="flex flex-col gap-1 flex-1">
+          <p className={`font-semibold text-base tracking-wide ${past ? "text-white/50" : ""}`}>{event.name}</p>
+          <div className="flex flex-wrap gap-x-3 gap-y-0.5 text-xs text-white/30 tracking-wide uppercase">
             <span>{event.date}</span>
             <span>·</span>
             <span>{event.location}</span>
@@ -195,47 +191,44 @@ function EventCard({ event, past }: { event: Event; past?: boolean }) {
           </div>
         </div>
         <div className="flex items-center gap-2 flex-shrink-0">
-          {/* Expand toggle — glass style */}
           <button
             onClick={() => setOpen(!open)}
-            className="px-4 py-2 rounded-full text-sm transition-all duration-200 backdrop-blur-md bg-white/6 border border-white/10 text-white/45 hover:bg-white/10 hover:border-white/20 hover:text-white/70"
+            className="px-4 py-1.5 rounded-sm text-xs tracking-widest uppercase transition-all duration-200 bg-white/4 border border-white/8 text-white/35 hover:bg-white/8 hover:border-white/15 hover:text-white/65"
             aria-expanded={open}
           >
-            {open ? "Close ↑" : "Expand ↓"}
+            {open ? "Close ↑" : "Details ↓"}
           </button>
-
-          {/* More Info — glass/pink */}
           {!past && event.moreInfoLink && (
             <a
               href={event.moreInfoLink}
               target={event.moreInfoType === "url" ? "_blank" : undefined}
               rel={event.moreInfoType === "url" ? "noopener noreferrer" : undefined}
-              className="px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 backdrop-blur-md bg-[#f472b6]/15 border border-[#f472b6]/30 text-[#f472b6] hover:bg-[#f472b6]/25 hover:border-[#f472b6]/50"
+              className="px-4 py-1.5 rounded-sm text-xs font-semibold tracking-widest uppercase transition-all duration-200 backdrop-blur-md bg-[#f472b6]/15 border border-[#f472b6]/30 text-[#f472b6] hover:bg-[#f472b6]/25 hover:border-[#f472b6]/50"
             >
-              More Information
+              Info
             </a>
           )}
         </div>
       </div>
 
       {open && (
-        <div className="px-6 pb-5 border-t border-white/6 pt-4 grid sm:grid-cols-2 gap-4">
+        <div className="pb-5 grid sm:grid-cols-2 gap-4">
           {event.address && (
             <div>
-              <p className="text-xs tracking-widest uppercase text-white/25 mb-1">Address</p>
-              <p className="text-white/60 text-sm">{event.address}</p>
+              <p className="text-[#f472b6] text-xs tracking-widest uppercase mb-1 font-medium">Address</p>
+              <p className="text-white/50 text-sm">{event.address}</p>
             </div>
           )}
           {event.time && (
             <div>
-              <p className="text-xs tracking-widest uppercase text-white/25 mb-1">Time</p>
-              <p className="text-white/60 text-sm">{event.time}</p>
+              <p className="text-[#f472b6] text-xs tracking-widest uppercase mb-1 font-medium">Time</p>
+              <p className="text-white/50 text-sm">{event.time}</p>
             </div>
           )}
           {event.description && (
             <div className="sm:col-span-2">
-              <p className="text-xs tracking-widest uppercase text-white/25 mb-1">About</p>
-              <p className="text-white/60 text-sm leading-relaxed">{event.description}</p>
+              <p className="text-[#f472b6] text-xs tracking-widest uppercase mb-1 font-medium">About</p>
+              <p className="text-white/50 text-sm leading-relaxed">{event.description}</p>
             </div>
           )}
         </div>
@@ -248,56 +241,45 @@ export default function EventsPage() {
   const [showPast, setShowPast] = useState(false);
 
   const upcoming = events.filter((e) => !isPast(e.sortDate));
-  const past = events.filter((e) => isPast(e.sortDate)).reverse(); // most recent first
+  const past = events.filter((e) => isPast(e.sortDate)).reverse();
 
   return (
-    <div className="pt-32 pb-24 px-6 max-w-4xl mx-auto">
-      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14">
+    <div className="pt-28 pb-20 px-6 max-w-4xl mx-auto">
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
         <div>
-          <p className="text-xs tracking-widest uppercase text-white/35 mb-3">2026 Tour</p>
-          <h1 className="text-6xl font-bold tracking-tight">Events</h1>
+          <p className="text-[#f472b6] text-xs tracking-widest uppercase mb-3 font-medium">2026 Tour</p>
+          <h1 className="text-7xl font-bold tracking-tighter uppercase">Events</h1>
         </div>
         {past.length > 0 && (
-          <GlassButton onClick={() => setShowPast(!showPast)} active={showPast}>
-            {showPast ? "Hide Past Events" : `Past Events (${past.length})`}
-          </GlassButton>
+          <SharpButton onClick={() => setShowPast(!showPast)} active={showPast}>
+            {showPast ? "Hide Past" : `Past Events (${past.length})`}
+          </SharpButton>
         )}
       </div>
 
-      {/* Past events — greyed out, shown above when toggled */}
       {showPast && past.length > 0 && (
         <div className="mb-10">
-          <p className="text-xs tracking-widest uppercase text-white/25 mb-4">Past</p>
-          <div className="flex flex-col gap-3">
-            {past.map((e) => (
-              <EventCard key={e.name + e.date} event={e} past />
-            ))}
-          </div>
-          <div className="h-px bg-white/6 mt-10 mb-4" />
+          <p className="text-white/20 text-xs tracking-widest uppercase mb-4 font-medium">Past</p>
+          {past.map((e) => <EventCard key={e.name + e.date} event={e} past />)}
+          <div className="h-px bg-white/6 mt-8 mb-6" />
         </div>
       )}
 
-      {/* Upcoming */}
       {upcoming.length > 0 ? (
-        <div className="flex flex-col gap-3">
-          {upcoming.map((e) => (
-            <EventCard key={e.name + e.date} event={e} />
-          ))}
+        <div>
+          {upcoming.map((e) => <EventCard key={e.name + e.date} event={e} />)}
         </div>
       ) : (
-        <div className="text-center py-24 text-white/30">
-          <p className="text-lg">No upcoming events right now.</p>
-          <p className="text-sm mt-2">Check back soon or follow on Instagram for updates.</p>
+        <div className="text-center py-20 text-white/25">
+          <p className="text-lg tracking-wide">No upcoming events right now.</p>
+          <p className="text-sm mt-2">Follow on Instagram for updates.</p>
         </div>
       )}
 
-      <div className="mt-16 p-8 rounded-2xl bg-white/4 border border-white/8 text-center">
-        <p className="text-white/55 mb-1 font-medium">Want to book Sam for your event?</p>
-        <p className="text-white/35 text-sm mb-6">Ministry bookings, conferences, youth events and more.</p>
-        <a
-          href="mailto:info@sam-daniel.com"
-          className="inline-block px-6 py-3 rounded-full backdrop-blur-md bg-[#f472b6]/15 border border-[#f472b6]/30 text-[#f472b6] font-semibold text-sm hover:bg-[#f472b6]/25 hover:border-[#f472b6]/50 transition-all"
-        >
+      <div className="mt-16 p-8 rounded-sm bg-white/3 border border-white/6 text-center">
+        <p className="text-white/55 mb-1 font-semibold tracking-wide">Want to book Sam?</p>
+        <p className="text-white/30 text-sm mb-6 tracking-wide">Ministry bookings, conferences, youth events and more.</p>
+        <a href="mailto:info@sam-daniel.com" className="inline-block px-6 py-2.5 rounded-sm backdrop-blur-md bg-[#f472b6]/15 border border-[#f472b6]/30 text-[#f472b6] font-semibold text-sm tracking-wide hover:bg-[#f472b6]/25 hover:border-[#f472b6]/50 transition-all">
           Get in Touch
         </a>
       </div>

@@ -22,9 +22,9 @@ const fallbackReleases = [
 ];
 
 const typeColors: Record<string, string> = {
-  Album: "bg-[#f472b6]/15 text-[#f472b6] border-[#f472b6]/25",
-  Single: "bg-white/5 text-white/45 border-white/10",
-  Live: "bg-amber-400/12 text-amber-300/80 border-amber-400/20",
+  Album: "bg-[#f472b6]/10 text-[#f472b6] border-[#f472b6]/20",
+  Single: "bg-white/4 text-white/40 border-white/8",
+  Live: "bg-amber-400/10 text-amber-300/70 border-amber-400/15",
 };
 
 export default async function MusicPage() {
@@ -32,40 +32,42 @@ export default async function MusicPage() {
   const releases = sanityReleases.length > 0 ? sanityReleases : fallbackReleases;
 
   return (
-    <div className="pt-32 pb-24 px-6 max-w-6xl mx-auto">
-      <div className="mb-14">
-        <p className="text-xs tracking-widest uppercase text-white/35 mb-3">Discography</p>
-        <h1 className="text-6xl font-bold tracking-tight">Music</h1>
-      </div>
+    <div className="pt-28 pb-20 px-6 max-w-6xl mx-auto">
+      <FadeIn>
+        <div className="mb-12">
+          <p className="text-[#f472b6] text-xs tracking-widest uppercase mb-3 font-medium">Discography</p>
+          <h1 className="text-7xl font-bold tracking-tighter uppercase">Music</h1>
+        </div>
+      </FadeIn>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5">
         {releases.map((r: typeof fallbackReleases[0], i: number) => (
-          <FadeIn key={r._id} delay={(i % 5) * 60}>
-          <div className="group flex flex-col gap-3">
-            <div className="relative aspect-square rounded-xl overflow-hidden bg-white/5">
-              <BlurImage
-                src={r.imageUrl}
-                alt={r.title}
-                fill
-                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2">
-                {r.spotifyUrl && (
-                  <a href={r.spotifyUrl} target="_blank" rel="noopener noreferrer" className="px-3 py-1.5 rounded-full bg-[#1DB954] text-black text-xs font-bold hover:opacity-90">Spotify</a>
-                )}
-                {r.appleUrl && (
-                  <a href={r.appleUrl} target="_blank" rel="noopener noreferrer" className="px-3 py-1.5 rounded-full bg-white text-black text-xs font-bold hover:opacity-90">Apple</a>
-                )}
+          <FadeIn key={r._id} delay={(i % 4) * 60}>
+            <div className="group flex flex-col gap-2.5">
+              <div className="relative aspect-square rounded-sm overflow-hidden bg-white/4">
+                <BlurImage
+                  src={r.imageUrl}
+                  alt={r.title}
+                  fill
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-black/75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2">
+                  {r.spotifyUrl && (
+                    <a href={r.spotifyUrl} target="_blank" rel="noopener noreferrer" className="px-3 py-1.5 rounded-sm bg-[#1DB954] text-black text-xs font-bold hover:opacity-90 tracking-wide">Spotify</a>
+                  )}
+                  {r.appleUrl && (
+                    <a href={r.appleUrl} target="_blank" rel="noopener noreferrer" className="px-3 py-1.5 rounded-sm bg-white text-black text-xs font-bold hover:opacity-90 tracking-wide">Apple</a>
+                  )}
+                </div>
+              </div>
+              <div>
+                <p className="text-sm font-medium leading-snug line-clamp-2 tracking-wide">{r.title}</p>
+                <span className={`inline-block mt-1 px-2 py-0.5 rounded-sm text-xs border ${typeColors[r.type] ?? typeColors.Single}`}>
+                  {r.type}
+                </span>
               </div>
             </div>
-            <div>
-              <p className="text-sm font-medium leading-snug line-clamp-2">{r.title}</p>
-              <span className={`inline-block mt-1.5 px-2 py-0.5 rounded-full text-xs border ${typeColors[r.type] ?? typeColors.Single}`}>
-                {r.type}
-              </span>
-            </div>
-          </div>
           </FadeIn>
         ))}
       </div>

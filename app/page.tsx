@@ -46,69 +46,66 @@ export default async function Home() {
   const displayEvents = upcomingEvents.length > 0 ? upcomingEvents : fallbackEvents;
 
   return (
-    <div className="pt-24">
+    <div className="pt-20">
 
-      {/* Hero */}
-      <section className="relative min-h-[90vh] flex flex-col items-center justify-center text-center px-6 gap-6 overflow-hidden">
+      {/* Hero — full bleed, massive type */}
+      <section className="relative min-h-[92vh] flex flex-col items-center justify-center text-center px-6 gap-5 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image src="/images/hero.jpg" alt="Sam Daniel" fill className="object-cover object-center opacity-25" priority sizes="100vw" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-[#09090f]" />
+          <Image src="/images/hero.jpg" alt="Sam Daniel" fill className="object-cover object-center opacity-20" priority sizes="100vw" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-[#080810]" />
         </div>
-        <div className="relative z-10 flex flex-col items-center gap-6">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/6 border border-white/10 text-white/50 text-xs tracking-widest uppercase">
-            London, UK
-          </div>
-          <h1 className="text-7xl md:text-9xl font-bold tracking-tighter leading-none">Sam Daniel</h1>
-          <p className="text-white/55 text-base md:text-lg tracking-[0.2em] uppercase">{tagline}</p>
-          <div className="flex items-center gap-3 mt-2">
-            <Link href="/music" className="px-6 py-3 rounded-full backdrop-blur-md bg-[#f472b6]/15 border border-[#f472b6]/30 text-[#f472b6] font-semibold text-sm hover:bg-[#f472b6]/25 hover:border-[#f472b6]/50 transition-all">
+        <div className="relative z-10 flex flex-col items-center gap-5">
+          <span className="text-[#f472b6] text-xs tracking-[0.35em] uppercase font-medium">London, UK</span>
+          <h1 className="text-[clamp(4rem,14vw,11rem)] font-bold tracking-tighter leading-[0.9] uppercase">Sam<br/>Daniel</h1>
+          <p className="text-white/40 text-sm md:text-base tracking-[0.25em] uppercase font-light">{tagline}</p>
+          <div className="flex items-center gap-3 mt-3">
+            <Link href="/music" className="px-6 py-2.5 text-sm font-semibold tracking-wide backdrop-blur-md bg-[#f472b6]/15 border border-[#f472b6]/30 text-[#f472b6] hover:bg-[#f472b6]/25 hover:border-[#f472b6]/50 transition-all rounded-sm">
               Listen Now
             </Link>
-            <Link href="/events" className="px-6 py-3 rounded-full border border-white/20 text-white text-sm hover:bg-white/8 transition-all">
+            <Link href="/events" className="px-6 py-2.5 border border-white/15 text-white/60 text-sm tracking-wide hover:bg-white/6 hover:text-white transition-all rounded-sm">
               Upcoming Events
             </Link>
           </div>
-          <div className="flex items-center gap-4 mt-2 flex-wrap justify-center">
-            <a href="https://open.spotify.com/artist/5qCmiCJixflA5aXSdH8GXB" target="_blank" rel="noopener noreferrer" className="text-white/35 hover:text-white/70 text-xs tracking-widest uppercase transition-colors">Spotify</a>
-            <span className="text-white/20">·</span>
-            <a href="https://music.apple.com/gb/artist/sam-daniel/1177716347" target="_blank" rel="noopener noreferrer" className="text-white/35 hover:text-white/70 text-xs tracking-widest uppercase transition-colors">Apple Music</a>
-            <span className="text-white/20">·</span>
-            <a href="https://youtube.com/samdanielmusic" target="_blank" rel="noopener noreferrer" className="text-white/35 hover:text-white/70 text-xs tracking-widest uppercase transition-colors">YouTube</a>
-            <span className="text-white/20">·</span>
-            <a href="https://instagram.com/officialsamdaniel" target="_blank" rel="noopener noreferrer" className="text-white/35 hover:text-white/70 text-xs tracking-widest uppercase transition-colors">Instagram</a>
+          <div className="flex items-center gap-5 mt-1">
+            {[
+              ["Spotify", "https://open.spotify.com/artist/5qCmiCJixflA5aXSdH8GXB"],
+              ["Apple Music", "https://music.apple.com/gb/artist/sam-daniel/1177716347"],
+              ["YouTube", "https://youtube.com/samdanielmusic"],
+              ["Instagram", "https://instagram.com/officialsamdaniel"],
+            ].map(([label, href]) => (
+              <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="text-white/25 hover:text-white/70 text-xs tracking-widest uppercase transition-colors">{label}</a>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Featured Release */}
-      <section className="max-w-5xl mx-auto px-6 py-24">
+      <section className="max-w-6xl mx-auto px-6 py-16">
         <FadeIn>
-          <div className="flex items-center gap-4 mb-10">
-            <span className="text-xs tracking-widest uppercase text-white/35">Featured Release</span>
-            <div className="h-px flex-1 bg-white/8" />
+          <div className="flex items-center gap-4 mb-8">
+            <span className="text-[#f472b6] text-xs tracking-widest uppercase font-medium">Featured Release</span>
+            <div className="h-px flex-1 bg-white/6" />
           </div>
         </FadeIn>
-        <FadeIn delay={100}>
-          <div className="flex flex-col md:flex-row gap-10 items-center md:items-start">
+        <FadeIn delay={80}>
+          <div className="flex flex-col md:flex-row gap-8 items-start">
             <BlurImage
               src={featured.artworkUrl ?? "/images/music/victorious.png"}
               alt={featured.title ?? "Featured"}
-              width={220}
-              height={220}
-              className="rounded-2xl shadow-2xl flex-shrink-0"
-              sizes="220px"
+              width={260}
+              height={260}
+              className="rounded-sm shadow-2xl flex-shrink-0"
+              sizes="260px"
             />
-            <div className="flex flex-col gap-5 pt-2">
-              <div>
-                <p className="text-white/35 text-xs uppercase tracking-widest mb-2">{featured.label ?? "Latest Release"}</p>
-                <h2 className="text-5xl md:text-6xl font-bold tracking-tight">{featured.title}</h2>
-              </div>
-              <div className="flex gap-3 flex-wrap">
+            <div className="flex flex-col gap-4 pt-1">
+              <p className="text-white/30 text-xs uppercase tracking-widest">{featured.label ?? "Latest Release"}</p>
+              <h2 className="text-5xl md:text-7xl font-bold tracking-tighter leading-none uppercase">{featured.title}</h2>
+              <div className="flex gap-3 flex-wrap mt-2">
                 {featured.spotifyUrl && (
-                  <a href={featured.spotifyUrl} target="_blank" rel="noopener noreferrer" className="px-5 py-2.5 rounded-full bg-[#1DB954] text-black font-semibold text-sm hover:opacity-90 transition-opacity">Spotify</a>
+                  <a href={featured.spotifyUrl} target="_blank" rel="noopener noreferrer" className="px-5 py-2.5 rounded-sm bg-[#1DB954] text-black font-semibold text-sm hover:opacity-90 transition-opacity tracking-wide">Spotify</a>
                 )}
                 {featured.appleUrl && (
-                  <a href={featured.appleUrl} target="_blank" rel="noopener noreferrer" className="px-5 py-2.5 rounded-full bg-white/8 border border-white/15 text-white text-sm hover:bg-white/15 transition-all">Apple Music</a>
+                  <a href={featured.appleUrl} target="_blank" rel="noopener noreferrer" className="px-5 py-2.5 rounded-sm bg-white/6 border border-white/12 text-white text-sm hover:bg-white/12 transition-all tracking-wide">Apple Music</a>
                 )}
               </div>
             </div>
@@ -117,18 +114,16 @@ export default async function Home() {
       </section>
 
       {/* Featured Video */}
-      <section className="max-w-5xl mx-auto px-6 py-10">
+      <section className="max-w-6xl mx-auto px-6 py-10">
         <FadeIn>
-          <div className="flex items-center gap-4 mb-10">
-            <span className="text-xs tracking-widest uppercase text-white/35">Featured Video</span>
-            <div className="h-px flex-1 bg-white/8" />
-            <Link href="/videos" className="text-[#f472b6] hover:text-[#ec4899] text-sm transition-colors flex-shrink-0">
-              All Videos →
-            </Link>
+          <div className="flex items-center gap-4 mb-8">
+            <span className="text-[#f472b6] text-xs tracking-widest uppercase font-medium">Featured Video</span>
+            <div className="h-px flex-1 bg-white/6" />
+            <Link href="/videos" className="text-white/35 hover:text-white text-xs tracking-widest uppercase transition-colors flex-shrink-0">All Videos →</Link>
           </div>
         </FadeIn>
-        <FadeIn delay={100}>
-          <div className="relative w-full rounded-2xl overflow-hidden" style={{ paddingBottom: "56.25%" }}>
+        <FadeIn delay={80}>
+          <div className="relative w-full rounded-sm overflow-hidden" style={{ paddingBottom: "56.25%" }}>
             <iframe
               src="https://www.youtube.com/embed/7oUg3xlFeRU"
               title="Sam Daniel — Featured Video"
@@ -141,24 +136,23 @@ export default async function Home() {
         </FadeIn>
       </section>
 
-      {/* About section */}
-      <section className="max-w-5xl mx-auto px-6 py-10">
+      {/* About */}
+      <section className="max-w-6xl mx-auto px-6 py-10">
         <FadeIn>
-          <div className="flex items-center gap-4 mb-10">
-            <span className="text-xs tracking-widest uppercase text-white/35">About</span>
-            <div className="h-px flex-1 bg-white/8" />
+          <div className="flex items-center gap-4 mb-8">
+            <span className="text-[#f472b6] text-xs tracking-widest uppercase font-medium">About</span>
+            <div className="h-px flex-1 bg-white/6" />
           </div>
         </FadeIn>
-        <FadeIn delay={100}>
-          <div className="grid md:grid-cols-2 gap-10 items-center">
-            <div className="relative aspect-square rounded-2xl overflow-hidden">
+        <FadeIn delay={80}>
+          <div className="grid md:grid-cols-2 gap-0 overflow-hidden rounded-sm">
+            <div className="relative aspect-[4/3] md:aspect-auto min-h-[360px]">
               <BlurImage src={aboutImageUrl} alt="Sam Daniel" fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 50vw" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
             </div>
-            <div className="flex flex-col gap-6">
-              <h2 className="text-4xl font-bold tracking-tight">{aboutHeading}</h2>
-              <p className="text-white/60 leading-relaxed">{aboutText}</p>
-              <Link href="/about" className="inline-flex items-center gap-2 text-[#f472b6] hover:text-[#ec4899] text-sm font-medium transition-colors">
+            <div className="flex flex-col justify-center gap-5 p-8 md:p-12 bg-white/3 border border-white/6">
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tighter uppercase">{aboutHeading}</h2>
+              <p className="text-white/55 leading-relaxed text-sm md:text-base">{aboutText}</p>
+              <Link href="/about" className="text-[#f472b6] hover:text-[#ec4899] text-sm font-medium transition-colors tracking-wide self-start">
                 Read More →
               </Link>
             </div>
@@ -166,31 +160,29 @@ export default async function Home() {
         </FadeIn>
       </section>
 
-      {/* Performance image divider */}
-      <section className="relative h-56 md:h-80 overflow-hidden my-20">
-        <Image src="/images/performance.jpg" alt="Sam Daniel performing" fill className="object-cover object-top opacity-35" sizes="100vw" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#09090f] via-transparent to-[#09090f]" />
+      {/* Performance divider */}
+      <section className="relative h-48 md:h-64 overflow-hidden my-16">
+        <Image src="/images/performance.jpg" alt="Sam Daniel performing" fill className="object-cover object-top opacity-30" sizes="100vw" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#080810] via-transparent to-[#080810]" />
       </section>
 
-      {/* Events Preview */}
-      <section className="max-w-5xl mx-auto px-6 py-10 pb-24">
+      {/* Events */}
+      <section className="max-w-6xl mx-auto px-6 py-10 pb-20">
         <FadeIn>
           <div className="flex items-center justify-between mb-8">
             <div className="flex items-center gap-4">
-              <span className="text-xs tracking-widest uppercase text-white/35">Upcoming</span>
-              <h2 className="text-2xl font-bold">Events</h2>
+              <span className="text-[#f472b6] text-xs tracking-widest uppercase font-medium">Upcoming</span>
+              <h2 className="text-2xl font-bold tracking-tight uppercase">Events</h2>
             </div>
-            <Link href="/events" className="text-[#f472b6] hover:text-[#ec4899] text-sm transition-colors">
-              View all →
-            </Link>
+            <Link href="/events" className="text-white/35 hover:text-white text-xs tracking-widest uppercase transition-colors">View all →</Link>
           </div>
         </FadeIn>
-        <div className="grid gap-2">
+        <div className="flex flex-col">
           {displayEvents.map((e: { _id: string; name: string; dateLabel?: string; date?: string }, i: number) => (
-            <FadeIn key={e._id} delay={i * 60}>
-              <div className="flex items-center justify-between px-5 py-4 rounded-xl bg-white/4 border border-white/6 hover:border-[#f472b6]/20 hover:bg-white/6 transition-all">
-                <span className="font-medium">{e.name}</span>
-                <span className="text-white/40 text-sm">{e.dateLabel ?? e.date}</span>
+            <FadeIn key={e._id} delay={i * 50}>
+              <div className="flex items-center justify-between px-0 py-4 border-b border-white/6 hover:bg-white/3 transition-all group cursor-default px-2">
+                <span className="font-medium tracking-wide group-hover:text-[#f472b6] transition-colors">{e.name}</span>
+                <span className="text-white/35 text-sm font-light tracking-wide">{e.dateLabel ?? e.date}</span>
               </div>
             </FadeIn>
           ))}
