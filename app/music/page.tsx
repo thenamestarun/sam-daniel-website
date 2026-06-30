@@ -1,6 +1,7 @@
-import Image from "next/image";
 import { client } from "@/sanity/lib/client";
 import { musicQuery } from "@/sanity/lib/queries";
+import FadeIn from "@/components/FadeIn";
+import BlurImage from "@/components/BlurImage";
 
 const fallbackReleases = [
   { _id: "1", title: "Victorious", imageUrl: "/images/music/victorious.png", spotifyUrl: "https://open.spotify.com/album/7LbvUeIK4p80xbEuZoEh5l", appleUrl: "https://music.apple.com/gb/album/victorious-single/1886911197", type: "Single" },
@@ -38,10 +39,11 @@ export default async function MusicPage() {
       </div>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-        {releases.map((r: typeof fallbackReleases[0]) => (
-          <div key={r._id} className="group flex flex-col gap-3">
+        {releases.map((r: typeof fallbackReleases[0], i: number) => (
+          <FadeIn key={r._id} delay={(i % 5) * 60}>
+          <div className="group flex flex-col gap-3">
             <div className="relative aspect-square rounded-xl overflow-hidden bg-white/5">
-              <Image
+              <BlurImage
                 src={r.imageUrl}
                 alt={r.title}
                 fill
@@ -64,6 +66,7 @@ export default async function MusicPage() {
               </span>
             </div>
           </div>
+          </FadeIn>
         ))}
       </div>
     </div>
