@@ -1,6 +1,5 @@
 import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
-import { visionTool } from "@sanity/vision";
 import { schemaTypes } from "./sanity/schemas";
 
 export default defineConfig({
@@ -8,7 +7,7 @@ export default defineConfig({
   title: "Sam Daniel",
   projectId: "ouxg4bbm",
   dataset: "production",
-  plugins: [structureTool(), visionTool()],
+  plugins: [structureTool()],
   schema: { types: schemaTypes },
   basePath: "/admin",
 });
