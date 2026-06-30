@@ -87,7 +87,7 @@ export default function StudioPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/60 via-black/30 to-[#050505]" />
         <div className="absolute bottom-10 left-0 right-0 px-8 max-w-5xl mx-auto">
           <p className="text-xs tracking-widest uppercase text-[#f43f8a] mb-2">Revival Sounds</p>
-          <h1 className="text-6xl md:text-7xl font-bold tracking-tight">Studio</h1>
+          <h1 className="text-6xl md:text-7xl font-bold tracking-tighter uppercase">Studio</h1>
         </div>
       </div>
 

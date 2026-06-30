@@ -122,14 +122,14 @@ export default async function Home() {
           </div>
         </FadeIn>
         <FadeIn delay={80}>
-          <div className="relative w-full rounded-lg overflow-hidden border border-white/6" style={{ paddingBottom: "56.25%" }}>
+          <div className="relative w-full rounded-sm overflow-hidden border border-white/6" style={{ paddingBottom: "56.25%" }}>
             <iframe
               src="https://www.youtube.com/embed/7oUg3xlFeRU"
               title="Sam Daniel — Featured Video"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
               loading="lazy"
-              className="absolute inset-0 w-full h-full rounded-lg"
+              className="absolute inset-0 w-full h-full"
             />
           </div>
         </FadeIn>
