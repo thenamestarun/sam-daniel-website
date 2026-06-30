@@ -86,7 +86,7 @@ export default function StudioPage() {
         <Image src="/images/studio/studio-main.png" alt="Revival Sounds Studio" fill className="object-cover object-center" priority />
         <div className="absolute inset-0 bg-gradient-to-b from-[#09090f]/60 via-black/30 to-[#09090f]" />
         <div className="absolute bottom-10 left-0 right-0 px-8 max-w-5xl mx-auto">
-          <p className="text-xs tracking-widest uppercase text-[#f472b6] mb-2">Revival Sounds</p>
+          <p className="text-xs tracking-widest uppercase text-[#f43f8a] mb-2">Revival Sounds</p>
           <h1 className="text-6xl md:text-7xl font-bold tracking-tight">Studio</h1>
         </div>
       </div>
@@ -107,10 +107,10 @@ export default function StudioPage() {
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {services.map((s) => (
-            <div key={s.title} className="p-6 rounded-2xl bg-white/4 border border-white/6 hover:border-[#f472b6]/20 transition-all flex flex-col gap-3">
+            <div key={s.title} className="p-6 rounded-2xl bg-white/4 border border-white/6 hover:border-[#f43f8a]/20 transition-all flex flex-col gap-3">
               <h3 className="font-bold text-base">{s.title}</h3>
               <p className="text-white/50 text-sm leading-relaxed flex-1">{s.description}</p>
-              <p className="text-[#f472b6] text-sm font-medium">{s.price}</p>
+              <p className="text-[#f43f8a] text-sm font-medium">{s.price}</p>
             </div>
           ))}
         </div>
@@ -138,7 +138,7 @@ export default function StudioPage() {
                       href={link.href}
                       target={link.href.startsWith("http") ? "_blank" : undefined}
                       rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                      className="text-[#f472b6] text-xs hover:text-[#ec4899] transition-colors truncate"
+                      className="text-[#f43f8a] text-xs hover:text-[#ec4899] transition-colors truncate"
                     >
                       {link.label} →
                     </a>
@@ -154,7 +154,7 @@ export default function StudioPage() {
       <div className="max-w-3xl mx-auto px-6 text-center">
         <p className="text-white/55 mb-1 font-medium text-lg">Ready to create something?</p>
         <p className="text-white/35 text-sm mb-8">Get in touch to book a session or discuss your project.</p>
-        <a href="mailto:revivalsoundsuk@gmail.com" className="inline-block px-8 py-3.5 rounded-full bg-[#f472b6] text-white font-semibold hover:bg-[#ec4899] transition-all">
+        <a href="mailto:revivalsoundsuk@gmail.com" className="inline-block px-8 py-3.5 rounded-full bg-[#f43f8a] text-white font-semibold hover:bg-[#ec4899] transition-all">
           Book a Session
         </a>
       </div>

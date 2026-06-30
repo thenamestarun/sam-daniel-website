@@ -52,14 +52,14 @@ export default async function Home() {
       <section className="relative min-h-[92vh] flex flex-col items-center justify-center text-center px-6 gap-5 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image src="/images/hero.jpg" alt="Sam Daniel" fill className="object-cover object-center opacity-20" priority sizes="100vw" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-[#080810]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-[#080808]" />
         </div>
         <div className="relative z-10 flex flex-col items-center gap-5">
-          <span className="text-[#f472b6] text-xs tracking-[0.35em] uppercase font-medium">London, UK</span>
+          <span className="text-[#f43f8a] text-xs tracking-[0.35em] uppercase font-medium">London, UK</span>
           <h1 className="text-[clamp(4rem,14vw,11rem)] font-bold tracking-tighter leading-[0.9] uppercase">Sam<br/>Daniel</h1>
           <p className="text-white/40 text-sm md:text-base tracking-[0.25em] uppercase font-light">{tagline}</p>
           <div className="flex items-center gap-3 mt-3">
-            <Link href="/music" className="px-6 py-2.5 text-sm font-semibold tracking-wide backdrop-blur-md bg-[#f472b6]/15 border border-[#f472b6]/30 text-[#f472b6] hover:bg-[#f472b6]/25 hover:border-[#f472b6]/50 transition-all rounded-sm">
+            <Link href="/music" className="px-6 py-2.5 text-sm font-semibold tracking-wide backdrop-blur-md bg-[#f43f8a]/15 border border-[#f43f8a]/30 text-[#f43f8a] hover:bg-[#f43f8a]/25 hover:border-[#f43f8a]/50 transition-all rounded-sm">
               Listen Now
             </Link>
             <Link href="/events" className="px-6 py-2.5 border border-white/15 text-white/60 text-sm tracking-wide hover:bg-white/6 hover:text-white transition-all rounded-sm">
@@ -83,7 +83,7 @@ export default async function Home() {
       <section className="max-w-6xl mx-auto px-6 py-16">
         <FadeIn>
           <div className="flex items-center gap-4 mb-8">
-            <span className="text-[#f472b6] text-xs tracking-widest uppercase font-medium">Featured Release</span>
+            <span className="text-[#f43f8a] text-xs tracking-widest uppercase font-medium">Featured Release</span>
             <div className="h-px flex-1 bg-white/6" />
           </div>
         </FadeIn>
@@ -117,7 +117,7 @@ export default async function Home() {
       <section className="max-w-6xl mx-auto px-6 py-10">
         <FadeIn>
           <div className="flex items-center gap-4 mb-8">
-            <span className="text-[#f472b6] text-xs tracking-widest uppercase font-medium">Featured Video</span>
+            <span className="text-[#f43f8a] text-xs tracking-widest uppercase font-medium">Featured Video</span>
             <div className="h-px flex-1 bg-white/6" />
             <Link href="/videos" className="text-white/35 hover:text-white text-xs tracking-widest uppercase transition-colors flex-shrink-0">All Videos →</Link>
           </div>
@@ -140,7 +140,7 @@ export default async function Home() {
       <section className="max-w-6xl mx-auto px-6 py-10">
         <FadeIn>
           <div className="flex items-center gap-4 mb-8">
-            <span className="text-[#f472b6] text-xs tracking-widest uppercase font-medium">About</span>
+            <span className="text-[#f43f8a] text-xs tracking-widest uppercase font-medium">About</span>
             <div className="h-px flex-1 bg-white/6" />
           </div>
         </FadeIn>
@@ -152,7 +152,7 @@ export default async function Home() {
             <div className="flex flex-col justify-center gap-5 p-8 md:p-12 bg-white/3 border border-white/6">
               <h2 className="text-4xl md:text-5xl font-bold tracking-tighter uppercase">{aboutHeading}</h2>
               <p className="text-white/55 leading-relaxed text-sm md:text-base">{aboutText}</p>
-              <Link href="/about" className="text-[#f472b6] hover:text-[#ec4899] text-sm font-medium transition-colors tracking-wide self-start">
+              <Link href="/about" className="text-[#f43f8a] hover:text-[#ec4899] text-sm font-medium transition-colors tracking-wide self-start">
                 Read More →
               </Link>
             </div>
@@ -163,7 +163,7 @@ export default async function Home() {
       {/* Performance divider */}
       <section className="relative h-48 md:h-64 overflow-hidden my-16">
         <Image src="/images/performance.jpg" alt="Sam Daniel performing" fill className="object-cover object-top opacity-30" sizes="100vw" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#080810] via-transparent to-[#080810]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#080808] via-transparent to-[#080808]" />
       </section>
 
       {/* Events */}
@@ -171,7 +171,7 @@ export default async function Home() {
         <FadeIn>
           <div className="flex items-center justify-between mb-8">
             <div className="flex items-center gap-4">
-              <span className="text-[#f472b6] text-xs tracking-widest uppercase font-medium">Upcoming</span>
+              <span className="text-[#f43f8a] text-xs tracking-widest uppercase font-medium">Upcoming</span>
               <h2 className="text-2xl font-bold tracking-tight uppercase">Events</h2>
             </div>
             <Link href="/events" className="text-white/35 hover:text-white text-xs tracking-widest uppercase transition-colors">View all →</Link>
@@ -181,7 +181,7 @@ export default async function Home() {
           {displayEvents.map((e: { _id: string; name: string; dateLabel?: string; date?: string }, i: number) => (
             <FadeIn key={e._id} delay={i * 50}>
               <div className="flex items-center justify-between px-0 py-4 border-b border-white/6 hover:bg-white/3 transition-all group cursor-default px-2">
-                <span className="font-medium tracking-wide group-hover:text-[#f472b6] transition-colors">{e.name}</span>
+                <span className="font-medium tracking-wide group-hover:text-[#f43f8a] transition-colors">{e.name}</span>
                 <span className="text-white/35 text-sm font-light tracking-wide">{e.dateLabel ?? e.date}</span>
               </div>
             </FadeIn>

@@ -37,7 +37,7 @@ export default function VideosPage() {
           href="https://youtube.com/samdanielmusic"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block px-6 py-3 rounded-full border border-white/20 text-white text-sm hover:bg-white/6 hover:border-[#f472b6]/30 transition-all"
+          className="inline-block px-6 py-3 rounded-full border border-white/20 text-white text-sm hover:bg-white/6 hover:border-[#f43f8a]/30 transition-all"
         >
           Subscribe on YouTube →
         </a>

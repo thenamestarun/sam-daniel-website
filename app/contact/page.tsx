@@ -5,19 +5,19 @@ export default function ContactPage() {
     <div className="pt-28 pb-20 px-6 max-w-4xl mx-auto">
       <FadeIn>
         <div className="mb-12">
-          <p className="text-[#f472b6] text-xs tracking-widest uppercase mb-3 font-medium">Get in Touch</p>
+          <p className="text-[#f43f8a] text-xs tracking-widest uppercase mb-3 font-medium">Get in Touch</p>
           <h1 className="text-7xl font-bold tracking-tighter uppercase">Contact</h1>
         </div>
       </FadeIn>
 
       <FadeIn delay={80}>
         <div className="grid sm:grid-cols-2 gap-px bg-white/6 rounded-sm overflow-hidden mb-8">
-          <a href="mailto:info@sam-daniel.com" className="p-7 bg-[#080810] hover:bg-white/3 transition-colors group">
-            <p className="text-[#f472b6] text-xs tracking-widest uppercase mb-3 font-medium">General &amp; Bookings</p>
+          <a href="mailto:info@sam-daniel.com" className="p-7 bg-[#080808] hover:bg-white/3 transition-colors group">
+            <p className="text-[#f43f8a] text-xs tracking-widest uppercase mb-3 font-medium">General &amp; Bookings</p>
             <p className="font-semibold text-lg tracking-wide group-hover:text-white transition-colors">info@sam-daniel.com</p>
           </a>
-          <a href="mailto:revivalsoundsuk@gmail.com" className="p-7 bg-[#080810] hover:bg-white/3 transition-colors group">
-            <p className="text-[#f472b6] text-xs tracking-widest uppercase mb-3 font-medium">Studio Bookings</p>
+          <a href="mailto:revivalsoundsuk@gmail.com" className="p-7 bg-[#080808] hover:bg-white/3 transition-colors group">
+            <p className="text-[#f43f8a] text-xs tracking-widest uppercase mb-3 font-medium">Studio Bookings</p>
             <p className="font-semibold text-lg tracking-wide group-hover:text-white transition-colors">revivalsoundsuk@gmail.com</p>
           </a>
         </div>
@@ -50,7 +50,7 @@ export default function ContactPage() {
 
       <FadeIn delay={160}>
         <div className="p-7 rounded-sm bg-white/3 border border-white/6">
-          <p className="text-[#f472b6] text-xs tracking-widest uppercase mb-3 font-medium">Support</p>
+          <p className="text-[#f43f8a] text-xs tracking-widest uppercase mb-3 font-medium">Support</p>
           <p className="text-white/50 text-sm leading-relaxed mb-5">
             10% of all donations go towards The Paalam Project — a Sri Lankan charity supporting vulnerable children.
           </p>

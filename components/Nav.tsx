@@ -71,15 +71,15 @@ export default function Nav() {
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-px bg-white/5 border border-white/8 rounded-sm px-1.5 py-1.5 backdrop-blur-md">
+        <div className="hidden md:flex items-center gap-7">
           {links.map((l) => (
             <Link
               key={l.href}
               href={l.href}
-              className={`px-4 py-1.5 rounded-sm text-sm font-medium tracking-wide transition-all duration-200 ${
+              className={`text-sm tracking-wide transition-all duration-200 ${
                 pathname === l.href
-                  ? "bg-[#f472b6] text-white"
-                  : "text-white/45 hover:text-white hover:bg-white/6"
+                  ? "text-[#f43f8a]"
+                  : "text-white/40 hover:text-white"
               }`}
             >
               {l.label}
@@ -109,7 +109,7 @@ export default function Nav() {
         className={`fixed inset-0 z-40 flex flex-col md:hidden transition-all duration-300 ${
           mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
-        style={{ background: "rgba(8,8,16,0.97)", backdropFilter: "blur(16px)" }}
+        style={{ background: "rgba(8,8,8,0.97)", backdropFilter: "blur(16px)" }}
       >
         <div className="flex flex-col justify-center h-full px-8 gap-1">
           {links.map((l, i) => (
@@ -117,7 +117,7 @@ export default function Nav() {
               key={l.href}
               href={l.href}
               className={`py-4 text-4xl font-bold tracking-tighter uppercase border-b border-white/6 transition-all duration-200 ${
-                pathname === l.href ? "text-[#f472b6]" : "text-white/70 hover:text-white"
+                pathname === l.href ? "text-[#f43f8a]" : "text-white/70 hover:text-white"
               }`}
               style={{ transitionDelay: mobileOpen ? `${i * 40}ms` : "0ms" }}
             >

@@ -22,7 +22,7 @@ const fallbackReleases = [
 ];
 
 const typeColors: Record<string, string> = {
-  Album: "bg-[#f472b6]/10 text-[#f472b6] border-[#f472b6]/20",
+  Album: "bg-[#f43f8a]/10 text-[#f43f8a] border-[#f43f8a]/20",
   Single: "bg-white/4 text-white/40 border-white/8",
   Live: "bg-amber-400/10 text-amber-300/70 border-amber-400/15",
 };
@@ -35,7 +35,7 @@ export default async function MusicPage() {
     <div className="pt-28 pb-20 px-6 max-w-6xl mx-auto">
       <FadeIn>
         <div className="mb-12">
-          <p className="text-[#f472b6] text-xs tracking-widest uppercase mb-3 font-medium">Discography</p>
+          <p className="text-[#f43f8a] text-xs tracking-widest uppercase mb-3 font-medium">Discography</p>
           <h1 className="text-7xl font-bold tracking-tighter uppercase">Music</h1>
         </div>
       </FadeIn>

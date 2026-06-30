@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #080810;
+  --bg: #050505;
   --surface: rgba(255,255,255,0.03);
   --border: rgba(255,255,255,0.07);
   --text: #ffffff;
   --muted: rgba(255,255,255,0.5);
-  --accent: #f472b6;
-  --accent-glow: rgba(244,114,182,0.2);
+  --accent: #f43f8a;
+  --accent-glow: rgba(244,63,138,0.15);
 }
 
 @theme inline {
@@ -20,32 +20,38 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background: var(--bg);
+  background: #050505;
   color: var(--text);
   font-family: var(--font-space), system-ui, sans-serif;
   min-height: 100dvh;
   overflow-x: hidden;
 }
 
-/* Tight pink spotlight from top */
+/* Dark organic fluid blobs */
 body::before {
   content: '';
   position: fixed;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 55% 50% at 50% -10%, rgba(244,114,182,0.18) 0%, transparent 65%),
-    radial-gradient(ellipse 25% 25% at 85% 85%, rgba(244,114,182,0.06) 0%, transparent 55%);
+  inset: -30%;
+  width: 160%;
+  height: 160%;
   pointer-events: none;
   z-index: 0;
+  background:
+    radial-gradient(ellipse 55% 45% at 18% 25%, rgba(38,38,38,0.9) 0%, transparent 100%),
+    radial-gradient(ellipse 40% 55% at 80% 35%, rgba(32,32,32,0.8) 0%, transparent 100%),
+    radial-gradient(ellipse 50% 40% at 48% 80%, rgba(35,35,35,0.75) 0%, transparent 100%),
+    radial-gradient(ellipse 38% 42% at 75% 8%,  rgba(28,28,28,0.7) 0%, transparent 100%),
+    radial-gradient(ellipse 42% 38% at 5% 72%,  rgba(30,30,30,0.7) 0%, transparent 100%),
+    radial-gradient(ellipse 30% 35% at 90% 88%, rgba(244,63,138,0.06) 0%, transparent 100%),
+    radial-gradient(ellipse 25% 30% at 10% 10%, rgba(244,63,138,0.04) 0%, transparent 100%);
+  filter: blur(60px);
+  animation: fluidDrift 40s ease-in-out infinite alternate;
 }
 
-/* Film grain */
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-  opacity: 0.035;
-  pointer-events: none;
-  z-index: 1;
+@keyframes fluidDrift {
+  0%   { transform: scale(1)    translate(0%,  0%)  rotate(0deg); }
+  25%  { transform: scale(1.04) translate(-2%, 1.5%) rotate(1deg); }
+  50%  { transform: scale(0.97) translate(1.5%,-2%) rotate(-0.8deg); }
+  75%  { transform: scale(1.02) translate(-1%, 2.5%) rotate(0.5deg); }
+  100% { transform: scale(1.05) translate(2%, -1%)  rotate(-1.2deg); }
 }

@@ -54,7 +54,7 @@ export default function TermsPage() {
 
         <section className="flex flex-col gap-3">
           <h2 className="text-white text-xl font-semibold">9. Contact</h2>
-          <p>Questions about these terms? Email <a href="mailto:info@sam-daniel.com" className="text-[#f472b6] hover:text-[#ec4899] transition-colors">info@sam-daniel.com</a>.</p>
+          <p>Questions about these terms? Email <a href="mailto:info@sam-daniel.com" className="text-[#f43f8a] hover:text-[#ec4899] transition-colors">info@sam-daniel.com</a>.</p>
         </section>
       </div>
     </div>

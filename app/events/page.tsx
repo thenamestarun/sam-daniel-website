@@ -164,7 +164,7 @@ function SharpButton({ children, onClick, active }: { children: React.ReactNode;
       onClick={onClick}
       className={`px-5 py-2 rounded-sm text-xs font-medium tracking-widest uppercase transition-all duration-200 border ${
         active
-          ? "bg-[#f472b6]/15 border-[#f472b6]/35 text-[#f472b6]"
+          ? "bg-[#f43f8a]/15 border-[#f43f8a]/35 text-[#f43f8a]"
           : "bg-white/4 border-white/10 text-white/45 hover:bg-white/8 hover:border-white/18 hover:text-white/80"
       }`}
     >
@@ -203,7 +203,7 @@ function EventCard({ event, past }: { event: Event; past?: boolean }) {
               href={event.moreInfoLink}
               target={event.moreInfoType === "url" ? "_blank" : undefined}
               rel={event.moreInfoType === "url" ? "noopener noreferrer" : undefined}
-              className="px-4 py-1.5 rounded-sm text-xs font-semibold tracking-widest uppercase transition-all duration-200 backdrop-blur-md bg-[#f472b6]/15 border border-[#f472b6]/30 text-[#f472b6] hover:bg-[#f472b6]/25 hover:border-[#f472b6]/50"
+              className="px-4 py-1.5 rounded-sm text-xs font-semibold tracking-widest uppercase transition-all duration-200 backdrop-blur-md bg-[#f43f8a]/15 border border-[#f43f8a]/30 text-[#f43f8a] hover:bg-[#f43f8a]/25 hover:border-[#f43f8a]/50"
             >
               Info
             </a>
@@ -215,19 +215,19 @@ function EventCard({ event, past }: { event: Event; past?: boolean }) {
         <div className="pb-5 grid sm:grid-cols-2 gap-4">
           {event.address && (
             <div>
-              <p className="text-[#f472b6] text-xs tracking-widest uppercase mb-1 font-medium">Address</p>
+              <p className="text-[#f43f8a] text-xs tracking-widest uppercase mb-1 font-medium">Address</p>
               <p className="text-white/50 text-sm">{event.address}</p>
             </div>
           )}
           {event.time && (
             <div>
-              <p className="text-[#f472b6] text-xs tracking-widest uppercase mb-1 font-medium">Time</p>
+              <p className="text-[#f43f8a] text-xs tracking-widest uppercase mb-1 font-medium">Time</p>
               <p className="text-white/50 text-sm">{event.time}</p>
             </div>
           )}
           {event.description && (
             <div className="sm:col-span-2">
-              <p className="text-[#f472b6] text-xs tracking-widest uppercase mb-1 font-medium">About</p>
+              <p className="text-[#f43f8a] text-xs tracking-widest uppercase mb-1 font-medium">About</p>
               <p className="text-white/50 text-sm leading-relaxed">{event.description}</p>
             </div>
           )}
@@ -247,7 +247,7 @@ export default function EventsPage() {
     <div className="pt-28 pb-20 px-6 max-w-4xl mx-auto">
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
         <div>
-          <p className="text-[#f472b6] text-xs tracking-widest uppercase mb-3 font-medium">2026 Tour</p>
+          <p className="text-[#f43f8a] text-xs tracking-widest uppercase mb-3 font-medium">2026 Tour</p>
           <h1 className="text-7xl font-bold tracking-tighter uppercase">Events</h1>
         </div>
         {past.length > 0 && (
@@ -279,7 +279,7 @@ export default function EventsPage() {
       <div className="mt-16 p-8 rounded-sm bg-white/3 border border-white/6 text-center">
         <p className="text-white/55 mb-1 font-semibold tracking-wide">Want to book Sam?</p>
         <p className="text-white/30 text-sm mb-6 tracking-wide">Ministry bookings, conferences, youth events and more.</p>
-        <a href="mailto:info@sam-daniel.com" className="inline-block px-6 py-2.5 rounded-sm backdrop-blur-md bg-[#f472b6]/15 border border-[#f472b6]/30 text-[#f472b6] font-semibold text-sm tracking-wide hover:bg-[#f472b6]/25 hover:border-[#f472b6]/50 transition-all">
+        <a href="mailto:info@sam-daniel.com" className="inline-block px-6 py-2.5 rounded-sm backdrop-blur-md bg-[#f43f8a]/15 border border-[#f43f8a]/30 text-[#f43f8a] font-semibold text-sm tracking-wide hover:bg-[#f43f8a]/25 hover:border-[#f43f8a]/50 transition-all">
           Get in Touch
         </a>
       </div>

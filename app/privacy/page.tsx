@@ -13,7 +13,7 @@ export default function PrivacyPage() {
 
         <section className="flex flex-col gap-3">
           <h2 className="text-white text-xl font-semibold">1. Who we are</h2>
-          <p>This website is operated by Sam Daniel (trading as Sam Daniel Music), based in London, UK. If you have any questions about how we handle your data, contact us at <a href="mailto:info@sam-daniel.com" className="text-[#f472b6] hover:text-[#ec4899] transition-colors">info@sam-daniel.com</a>.</p>
+          <p>This website is operated by Sam Daniel (trading as Sam Daniel Music), based in London, UK. If you have any questions about how we handle your data, contact us at <a href="mailto:info@sam-daniel.com" className="text-[#f43f8a] hover:text-[#ec4899] transition-colors">info@sam-daniel.com</a>.</p>
         </section>
 
         <section className="flex flex-col gap-3">
@@ -40,7 +40,7 @@ export default function PrivacyPage() {
 
         <section className="flex flex-col gap-3">
           <h2 className="text-white text-xl font-semibold">5. Your rights</h2>
-          <p>Under UK GDPR, you have the right to access, correct, or request deletion of any personal data we hold about you. To exercise these rights, email <a href="mailto:info@sam-daniel.com" className="text-[#f472b6] hover:text-[#ec4899] transition-colors">info@sam-daniel.com</a>.</p>
+          <p>Under UK GDPR, you have the right to access, correct, or request deletion of any personal data we hold about you. To exercise these rights, email <a href="mailto:info@sam-daniel.com" className="text-[#f43f8a] hover:text-[#ec4899] transition-colors">info@sam-daniel.com</a>.</p>
         </section>
 
         <section className="flex flex-col gap-3">
