@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { PortableText } from "@portabletext/react";
 import { client } from "@/sanity/lib/client";
 import { aboutQuery } from "@/sanity/lib/queries";
@@ -42,8 +41,8 @@ export default async function AboutPage() {
 
       {/* Full-bleed hero */}
       <div className="relative h-[65vh] overflow-hidden mb-16">
-        <Image src={heroImageUrl} alt="Sam Daniel" fill className="object-cover object-top" priority sizes="100vw" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#080810]/40 via-transparent to-[#080810]" />
+        <BlurImage src={heroImageUrl} alt="Sam Daniel" fill className="object-cover object-top" priority sizes="100vw" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/40 via-transparent to-[#050505]" />
         <div className="absolute bottom-10 left-0 right-0 px-8 max-w-6xl mx-auto">
           <p className="text-[#f43f8a] text-xs tracking-widest uppercase mb-2 font-medium">Story</p>
           <h1 className="text-7xl md:text-8xl font-bold tracking-tighter uppercase leading-none">About Sam</h1>

@@ -2,10 +2,11 @@
 import Image, { ImageProps } from "next/image";
 import { useState } from "react";
 
+// Dark shimmer placeholder — 8×8 dark gray, base64 encoded
 const BLUR_DATA =
-  "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==";
+  "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIElEQVQI12NgYGD4z8BQDwAEgAF/QualIQAAAABJRU5ErkJggg==";
 
-export default function BlurImage({ className = "", ...props }: ImageProps & { className?: string }) {
+export default function BlurImage({ className = "", style, ...props }: ImageProps & { className?: string }) {
   const [loaded, setLoaded] = useState(false);
 
   return (
@@ -14,7 +15,8 @@ export default function BlurImage({ className = "", ...props }: ImageProps & { c
       placeholder="blur"
       blurDataURL={BLUR_DATA}
       onLoad={() => setLoaded(true)}
-      className={`transition-opacity duration-700 ${loaded ? "opacity-100" : "opacity-0"} ${className}`}
+      style={{ ...style, transition: "opacity 0.9s ease" }}
+      className={`${loaded ? "opacity-100" : "opacity-0"} ${className}`}
     />
   );
 }

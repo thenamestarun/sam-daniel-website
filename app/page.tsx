@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { client } from "@/sanity/lib/client";
 import { homepageQuery, eventsQuery } from "@/sanity/lib/queries";
 import FadeIn from "@/components/FadeIn";
@@ -51,7 +50,7 @@ export default async function Home() {
       {/* Hero — full bleed, massive type */}
       <section className="relative min-h-[92vh] flex flex-col items-center justify-center text-center px-6 gap-5 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image src="/images/hero.jpg" alt="Sam Daniel" fill className="object-cover object-center opacity-20" priority sizes="100vw" />
+          <BlurImage src="/images/hero.jpg" alt="Sam Daniel" fill className="object-cover object-center opacity-20" priority sizes="100vw" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-[#080808]" />
         </div>
         <div className="relative z-10 flex flex-col items-center gap-5">
@@ -162,7 +161,7 @@ export default async function Home() {
 
       {/* Performance divider */}
       <section className="relative h-48 md:h-64 overflow-hidden my-16">
-        <Image src="/images/performance.jpg" alt="Sam Daniel performing" fill className="object-cover object-top opacity-30" sizes="100vw" />
+        <BlurImage src="/images/performance.jpg" alt="Sam Daniel performing" fill className="object-cover object-top opacity-30" sizes="100vw" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#080808] via-transparent to-[#080808]" />
       </section>
 
