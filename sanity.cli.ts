@@ -5,4 +5,5 @@ export default defineCliConfig({
     projectId: "ouxg4bbm",
     dataset: "production",
   },
+  studioHost: "sam-daniel",
 });
