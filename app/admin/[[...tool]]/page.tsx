@@ -1,7 +1,16 @@
 "use client";
-import { NextStudio } from "next-sanity/studio";
-import config from "../../../sanity.config";
+import { useEffect } from "react";
+
+export const runtime = "edge";
 
 export default function AdminPage() {
-  return <NextStudio config={config} />;
+  useEffect(() => {
+    window.location.href = "https://ouxg4bbm.sanity.studio";
+  }, []);
+
+  return (
+    <div className="min-h-screen flex items-center justify-center">
+      <p className="text-white/50 text-sm">Redirecting to Sanity Studio…</p>
+    </div>
+  );
 }
