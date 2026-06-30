@@ -8,7 +8,7 @@ import BlurImage from "@/components/BlurImage";
 const fallbackFeatured = {
   title: "Victorious",
   label: "Latest Single",
-  artworkUrl: "/images/music/victorious.png",
+  artworkUrl: "/images/music/victorious.jpg",
   spotifyUrl: "https://open.spotify.com/album/7LbvUeIK4p80xbEuZoEh5l",
   appleUrl: "https://music.apple.com/gb/album/victorious-single/1886911197",
 };
@@ -90,7 +90,7 @@ export default async function Home() {
         <FadeIn delay={80}>
           <div className="flex flex-col md:flex-row gap-8 items-start">
             <BlurImage
-              src={featured.artworkUrl ?? "/images/music/victorious.png"}
+              src={featured.artworkUrl ?? "/images/music/victorious.jpg"}
               alt={featured.title ?? "Featured"}
               width={260}
               height={260}
