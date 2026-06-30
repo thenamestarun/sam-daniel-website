@@ -5,7 +5,7 @@ export const runtime = "edge";
 
 export default function AdminPage() {
   useEffect(() => {
-    window.location.href = "https://ouxg4bbm.sanity.studio";
+    window.location.href = "https://sam-daniel.sanity.studio";
   }, []);
 
   return (
