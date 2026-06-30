@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
@@ -14,12 +14,19 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: "Sam Daniel — Worship Leader · Artist · Producer",
   description: "Independent recording artist, songwriter, producer and worship leader based in London, UK.",
-  themeColor: "#050505",
+  icons: {
+    icon: "/favicon.png",
+    apple: "/apple-touch-icon.png",
+  },
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
     title: "Sam Daniel",
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#050505",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
