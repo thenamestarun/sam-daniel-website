@@ -1,3 +1,4 @@
+import Image from "next/image";
 import BlurImage from "@/components/BlurImage";
 
 const services = [
@@ -83,7 +84,7 @@ export default function StudioPage() {
 
       {/* Hero */}
       <div className="relative h-[50vh] overflow-hidden mb-20">
-        <BlurImage src="/images/studio/studio-main.png" alt="Revival Sounds Studio" fill className="object-cover object-center" priority />
+        <Image src="/images/studio/studio-main.png" alt="Revival Sounds Studio" fill className="object-cover object-center" priority />
         <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/60 via-black/30 to-[#050505]" />
         <div className="absolute bottom-10 left-0 right-0 px-8 max-w-5xl mx-auto">
           <p className="text-xs tracking-widest uppercase text-[#f43f8a] mb-2">Revival Sounds</p>
