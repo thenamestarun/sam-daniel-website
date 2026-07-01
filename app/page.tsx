@@ -109,11 +109,12 @@ export default async function Home() {
               <YouTubeIcon />
             </a>
           </div>
-          <a href="https://instagram.com/officialsamdaniel" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white/25 hover:text-white/60 transition-colors text-xs tracking-widest uppercase mt-1" aria-label="Instagram">
-            <InstagramIcon />
-            <span>Follow on Instagram</span>
-          </a>
         </div>
+        {/* Instagram — pinned to bottom of hero */}
+        <a href="https://instagram.com/officialsamdaniel" target="_blank" rel="noopener noreferrer" className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-2 text-white/30 hover:text-white/70 transition-colors text-[10px] tracking-widest uppercase z-10" aria-label="Instagram">
+          <InstagramIcon />
+          <span>Follow on Instagram</span>
+        </a>
       </section>
 
       {/* Featured Release */}
