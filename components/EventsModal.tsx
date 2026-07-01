@@ -10,9 +10,9 @@ export function EventsButton({ events }: { events: Event[] }) {
     <>
       <button
         onClick={() => setOpen(true)}
-        className="px-5 py-2.5 text-sm font-semibold tracking-wide backdrop-blur-md bg-white/8 border border-[#f43f8a] text-white hover:bg-white/14 hover:border-[#f43f8a]/70 transition-all rounded-sm font-montserrat"
+        className="px-5 py-2.5 text-sm font-semibold tracking-wide backdrop-blur-md bg-[#f43f8a]/15 border border-white/20 text-white hover:bg-[#f43f8a]/25 transition-all rounded-sm font-montserrat"
       >
-        Upcoming Events
+        Events
       </button>
 
       {open && (
