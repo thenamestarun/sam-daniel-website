@@ -183,8 +183,8 @@ function EventCard({ event, past }: { event: Event; past?: boolean }) {
       <div className={`py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 ${open ? "pb-4" : ""}`}>
         <div className="flex flex-col gap-1 flex-1">
           <p className={`font-semibold text-base tracking-wide ${past ? "text-white/50" : ""}`}>{event.name}</p>
-          <div className="flex flex-wrap gap-x-3 gap-y-0.5 text-xs text-white/30 tracking-wide uppercase">
-            <span>{event.date}</span>
+          <div className="flex flex-wrap gap-x-3 gap-y-0.5 text-xs tracking-wide uppercase">
+            <span className={past ? "text-white/30" : "text-[#f43f8a]"}>{event.date}</span>
             <span>·</span>
             <span>{event.location}</span>
             {event.time && <><span>·</span><span>{event.time}</span></>}
