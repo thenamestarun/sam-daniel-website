@@ -118,7 +118,7 @@ export default async function Home() {
       </section>
 
       {/* Featured Release */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 py-14">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 py-8">
         <FadeIn>
           <div className="flex items-center gap-4 mb-8">
             <span className="text-[#f43f8a] text-xs tracking-widest uppercase font-medium">Featured Release</span>
@@ -131,10 +131,10 @@ export default async function Home() {
               <BlurImage
                 src={featured.artworkUrl ?? "/images/music/victorious.jpg"}
                 alt={featured.title ?? "Featured"}
-                width={140}
-                height={140}
-                className="rounded-sm shadow-2xl w-[100px] sm:w-[140px]"
-                sizes="140px"
+                width={180}
+                height={180}
+                className="rounded-sm shadow-2xl w-[130px] sm:w-[180px]"
+                sizes="180px"
               />
             </div>
             <div className="flex flex-col gap-1.5 min-w-0">

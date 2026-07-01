@@ -51,6 +51,7 @@ body::before {
     radial-gradient(ellipse 55% 65% at 80% 75%, rgba(244,63,138,0.08) 0%, transparent 65%),
     radial-gradient(ellipse 50% 45% at 60% 45%, rgba(244,63,138,0.04) 0%, transparent 60%);
   animation: ambientPink 18s ease-in-out infinite alternate;
+  will-change: opacity;
 }
 
 body::after {
@@ -63,11 +64,12 @@ body::after {
     radial-gradient(ellipse 70% 60% at 70% 20%, rgba(244,63,138,0.07) 0%, transparent 70%),
     radial-gradient(ellipse 60% 50% at 15% 80%, rgba(244,63,138,0.09) 0%, transparent 65%);
   animation: ambientPink 24s ease-in-out infinite alternate-reverse;
+  will-change: opacity;
 }
 
 @keyframes ambientPink {
-  0%   { transform: scale(1)    translate(0%,    0%);   opacity: 1; }
-  33%  { transform: scale(1.08) translate(-3%,   2%);   opacity: 0.75; }
-  66%  { transform: scale(0.94) translate(4%,   -3%);   opacity: 0.9; }
-  100% { transform: scale(1.05) translate(-2%,   4%);   opacity: 0.8; }
+  0%   { opacity: 1; }
+  33%  { opacity: 0.75; }
+  66%  { opacity: 0.9; }
+  100% { opacity: 0.8; }
 }
