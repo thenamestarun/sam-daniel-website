@@ -84,7 +84,7 @@ export default async function Home() {
       {/* Hero */}
       <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 gap-4 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image src="/images/hero.jpg" alt="Sam Daniel" fill className="object-cover object-center opacity-40" priority sizes="100vw" />
+          <Image src="/images/hero.jpg" alt="Sam Daniel" fill className="object-cover object-center opacity-30" priority sizes="100vw" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-[#080808]" />
         </div>
         <div className="relative z-10 flex flex-col items-center gap-4 w-full max-w-5xl mx-auto">
@@ -92,7 +92,7 @@ export default async function Home() {
           <h1 className="font-montserrat text-[clamp(2.5rem,8vw,7rem)] font-bold tracking-tighter leading-none uppercase">Sam Daniel</h1>
           <p className="text-white/40 text-[10px] md:text-sm tracking-[0.1em] md:tracking-[0.2em] uppercase font-light whitespace-nowrap">{tagline}</p>
           <div className="flex flex-wrap items-center justify-center gap-3 mt-2">
-            <Link href="/music" className="font-montserrat px-5 py-2.5 text-sm font-semibold tracking-wide backdrop-blur-md bg-[#f43f8a]/15 border border-white/20 text-white hover:bg-[#f43f8a]/25 transition-all rounded-sm">
+            <Link href="/music" className="font-montserrat px-5 py-2.5 text-sm font-semibold tracking-wide backdrop-blur-md bg-white/10 border border-white/25 text-white hover:bg-white/18 transition-all rounded-sm">
               View Music
             </Link>
             <EventsButton events={displayEvents} />
