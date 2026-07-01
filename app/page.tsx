@@ -82,7 +82,7 @@ export default async function Home() {
         <div className="relative z-10 flex flex-col items-center gap-4 w-full max-w-5xl mx-auto">
           <span className="text-[#f43f8a] text-xs tracking-[0.35em] uppercase font-medium">London, UK</span>
           <h1 className="font-montserrat text-[clamp(2.5rem,8vw,7rem)] font-bold tracking-tighter leading-none uppercase">Sam Daniel</h1>
-          <p className="text-white/40 text-xs md:text-sm tracking-[0.2em] uppercase font-light px-4">{tagline}</p>
+          <p className="text-white/40 text-[10px] md:text-sm tracking-[0.1em] md:tracking-[0.2em] uppercase font-light whitespace-nowrap">{tagline}</p>
           <div className="flex flex-wrap items-center justify-center gap-3 mt-2">
             <Link href="/music" className="font-montserrat px-5 py-2.5 text-sm font-semibold tracking-wide backdrop-blur-md bg-[#f43f8a]/15 border border-[#f43f8a]/30 text-[#f43f8a] hover:bg-[#f43f8a]/25 hover:border-[#f43f8a]/50 transition-all rounded-sm">
               View Music
@@ -124,17 +124,17 @@ export default async function Home() {
                 sizes="80px"
               />
             </div>
-            <div className="flex flex-col gap-1 min-w-0 flex-1">
+            <div className="flex flex-col gap-2 min-w-0 flex-1">
               <p className="text-white/30 text-xs uppercase tracking-widest">{featured.label ?? "Latest Release"}</p>
               <h2 className="font-montserrat text-2xl sm:text-3xl md:text-4xl font-bold tracking-tighter leading-none uppercase truncate">{featured.title}</h2>
-            </div>
-            <div className="flex gap-2 flex-shrink-0">
+              <div className="flex gap-2 flex-wrap">
               {featured.spotifyUrl && (
                 <a href={featured.spotifyUrl} target="_blank" rel="noopener noreferrer" className="px-4 py-2 rounded-sm bg-[#1DB954] text-black font-semibold text-xs hover:opacity-90 transition-opacity tracking-wide whitespace-nowrap">Spotify</a>
               )}
               {featured.appleUrl && (
                 <a href={featured.appleUrl} target="_blank" rel="noopener noreferrer" className="px-4 py-2 rounded-sm text-white text-xs font-semibold hover:opacity-90 transition-opacity tracking-wide whitespace-nowrap" style={{ background: "linear-gradient(135deg, #FA233B, #FB5C74)" }}>Apple Music</a>
               )}
+              </div>
             </div>
           </div>
         </FadeIn>
