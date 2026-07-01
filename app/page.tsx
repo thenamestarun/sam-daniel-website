@@ -92,7 +92,7 @@ export default async function Home() {
           <h1 className="font-montserrat text-[clamp(2.5rem,8vw,7rem)] font-bold tracking-tighter leading-none uppercase">Sam Daniel</h1>
           <p className="text-white/40 text-[10px] md:text-sm tracking-[0.1em] md:tracking-[0.2em] uppercase font-light whitespace-nowrap">{tagline}</p>
           <div className="flex flex-wrap items-center justify-center gap-3 mt-2">
-            <Link href="/music" className="font-montserrat px-5 py-2.5 text-sm font-semibold tracking-wide text-white hover:opacity-90 transition-all rounded-sm" style={{ background: "linear-gradient(135deg, #f43f8a, #e11d7a)" }}>
+            <Link href="/music" className="font-montserrat px-5 py-2.5 text-sm font-semibold tracking-wide backdrop-blur-md bg-white/8 border border-[#f43f8a] text-white hover:bg-white/14 hover:border-[#f43f8a]/70 transition-all rounded-sm">
               View Music
             </Link>
             <EventsButton events={displayEvents} />
