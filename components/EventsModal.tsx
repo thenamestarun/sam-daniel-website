@@ -10,7 +10,7 @@ export function EventsButton({ events }: { events: Event[] }) {
     <>
       <button
         onClick={() => setOpen(true)}
-        className="px-5 py-2.5 text-sm font-semibold tracking-wide backdrop-blur-md bg-[#f43f8a]/10 border border-[#f43f8a]/25 text-white hover:bg-[#f43f8a]/20 hover:border-[#f43f8a]/45 transition-all rounded-sm font-montserrat"
+        className="px-5 py-2.5 text-sm font-semibold tracking-wide text-white hover:opacity-90 transition-all rounded-sm font-montserrat"  style={{ background: "linear-gradient(135deg, #f43f8a, #e11d7a)" }}
       >
         Upcoming Events
       </button>
