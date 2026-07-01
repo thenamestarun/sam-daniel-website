@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Space_Grotesk } from "next/font/google";
+import { Space_Grotesk, Montserrat } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -9,6 +9,12 @@ const spaceGrotesk = Space_Grotesk({
   variable: "--font-space",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
+});
+
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
@@ -31,7 +37,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={spaceGrotesk.variable}>
+    <html lang="en" className={`${spaceGrotesk.variable} ${montserrat.variable}`}>
       <body className="relative min-h-screen">
         <Nav />
         <main className="relative z-10">{children}</main>

@@ -76,7 +76,7 @@ export default function Nav() {
             <Link
               key={l.href}
               href={l.href}
-              className={`text-sm tracking-wide transition-all duration-200 ${
+              className={`font-montserrat text-sm tracking-wide transition-all duration-200 ${
                 pathname === l.href
                   ? "text-[#f43f8a]"
                   : "text-white/40 hover:text-white"
@@ -116,7 +116,7 @@ export default function Nav() {
             <Link
               key={l.href}
               href={l.href}
-              className={`py-4 text-4xl font-bold tracking-tighter uppercase border-b border-white/6 transition-all duration-200 ${
+              className={`font-montserrat py-4 text-4xl font-bold tracking-tighter uppercase border-b border-white/6 transition-all duration-200 ${
                 pathname === l.href ? "text-[#f43f8a]" : "text-white/70 hover:text-white"
               }`}
               style={{ transitionDelay: mobileOpen ? `${i * 40}ms` : "0ms" }}

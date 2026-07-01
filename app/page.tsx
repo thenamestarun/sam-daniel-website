@@ -4,6 +4,7 @@ import { client } from "@/sanity/lib/client";
 import { homepageQuery, eventsQuery } from "@/sanity/lib/queries";
 import FadeIn from "@/components/FadeIn";
 import BlurImage from "@/components/BlurImage";
+import { EventsButton } from "@/components/EventsModal";
 
 const fallbackFeatured = {
   title: "Victorious",
@@ -17,6 +18,30 @@ function isPast(sortDate: string) {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
   return new Date(sortDate) < today;
+}
+
+function SpotifyIcon() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+    </svg>
+  );
+}
+
+function AppleMusicIcon() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M23.994 6.124a9.23 9.23 0 00-.24-2.19c-.317-1.31-1.062-2.31-2.18-3.043a5.022 5.022 0 00-1.877-.726 10.496 10.496 0 00-1.564-.15c-.04-.003-.083-.01-.124-.013H5.986c-.152.01-.303.017-.455.026C4.786.07 4.043.15 3.34.428 2.004.958 1.04 1.88.475 3.208A5.485 5.485 0 00.05 5.02c-.01.15-.017.303-.02.456v13.047c.01.152.017.303.026.456a5.484 5.484 0 00.428 1.863c.53 1.337 1.452 2.3 2.78 2.867a5.484 5.484 0 001.812.425c.15.01.303.017.456.02h13.047c.152-.01.303-.017.456-.026a5.485 5.485 0 001.863-.428c1.337-.53 2.3-1.452 2.867-2.78a5.485 5.485 0 00.425-1.812c.01-.15.017-.303.02-.456V6.58c-.003-.153-.01-.304-.02-.456zm-5.8 8.086a.61.61 0 01-.084.31.72.72 0 01-.307.285l-4.164 2.102a.783.783 0 01-.38.094.79.79 0 01-.792-.792V9.586l-4.155 2.1a.783.783 0 01-.38.093.79.79 0 01-.791-.791V7.24a.61.61 0 01.084-.31.72.72 0 01.307-.285l4.936-2.492a.783.783 0 01.38-.094.79.79 0 01.791.792v6.588l3.364-1.7a.783.783 0 01.38-.093.79.79 0 01.791.791v2.753z"/>
+    </svg>
+  );
+}
+
+function InstagramIcon() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+    </svg>
+  );
 }
 
 export default async function Home() {
@@ -56,25 +81,25 @@ export default async function Home() {
         </div>
         <div className="relative z-10 flex flex-col items-center gap-4 w-full max-w-5xl mx-auto">
           <span className="text-[#f43f8a] text-xs tracking-[0.35em] uppercase font-medium">London, UK</span>
-          <h1 className="text-[clamp(3.2rem,14vw,11rem)] font-bold tracking-tighter leading-[0.88] uppercase">Sam<br/>Daniel</h1>
+          <h1 className="font-montserrat text-[clamp(3.2rem,14vw,11rem)] font-black tracking-tighter leading-[0.88] uppercase">Sam<br/>Daniel</h1>
           <p className="text-white/40 text-xs md:text-sm tracking-[0.2em] uppercase font-light px-4">{tagline}</p>
           <div className="flex flex-wrap items-center justify-center gap-3 mt-2">
-            <Link href="/music" className="px-5 py-2.5 text-sm font-semibold tracking-wide backdrop-blur-md bg-[#f43f8a]/15 border border-[#f43f8a]/30 text-[#f43f8a] hover:bg-[#f43f8a]/25 hover:border-[#f43f8a]/50 transition-all rounded-sm">
-              Listen Now
+            <Link href="/music" className="font-montserrat px-5 py-2.5 text-sm font-semibold tracking-wide backdrop-blur-md bg-[#f43f8a]/15 border border-[#f43f8a]/30 text-[#f43f8a] hover:bg-[#f43f8a]/25 hover:border-[#f43f8a]/50 transition-all rounded-sm">
+              View Music
             </Link>
-            <Link href="/events" className="px-5 py-2.5 border border-white/15 text-white/60 text-sm tracking-wide hover:bg-white/6 hover:text-white transition-all rounded-sm">
-              Upcoming Events
-            </Link>
+            <EventsButton events={displayEvents} />
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-4 mt-1">
-            {[
-              ["Spotify", "https://open.spotify.com/artist/5qCmiCJixflA5aXSdH8GXB"],
-              ["Apple Music", "https://music.apple.com/gb/artist/sam-daniel/1177716347"],
-              ["YouTube", "https://youtube.com/samdanielmusic"],
-              ["Instagram", "https://instagram.com/officialsamdaniel"],
-            ].map(([label, href]) => (
-              <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="text-white/25 hover:text-white/70 text-xs tracking-widest uppercase transition-colors">{label}</a>
-            ))}
+          {/* Social icons */}
+          <div className="flex items-center justify-center gap-6 mt-2">
+            <a href="https://open.spotify.com/artist/5qCmiCJixflA5aXSdH8GXB" target="_blank" rel="noopener noreferrer" className="text-white/30 hover:text-[#1DB954] transition-colors" aria-label="Spotify">
+              <SpotifyIcon />
+            </a>
+            <a href="https://music.apple.com/gb/artist/sam-daniel/1177716347" target="_blank" rel="noopener noreferrer" className="text-white/30 hover:text-white transition-colors" aria-label="Apple Music">
+              <AppleMusicIcon />
+            </a>
+            <a href="https://instagram.com/officialsamdaniel" target="_blank" rel="noopener noreferrer" className="text-white/30 hover:text-[#E1306C] transition-colors" aria-label="Instagram">
+              <InstagramIcon />
+            </a>
           </div>
         </div>
       </section>
@@ -88,28 +113,28 @@ export default async function Home() {
           </div>
         </FadeIn>
         <FadeIn delay={80}>
-          <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 items-start">
-            <div className="w-full sm:w-auto flex-shrink-0">
+          <div className="flex flex-row gap-5 items-center">
+            <div className="flex-shrink-0">
               <BlurImage
                 src={featured.artworkUrl ?? "/images/music/victorious.jpg"}
                 alt={featured.title ?? "Featured"}
-                width={260}
-                height={260}
-                className="rounded-sm shadow-2xl w-full sm:w-[220px] md:w-[260px] h-auto"
-                sizes="(max-width: 640px) 100vw, 260px"
+                width={80}
+                height={80}
+                className="rounded-sm shadow-2xl"
+                sizes="80px"
               />
             </div>
-            <div className="flex flex-col gap-4 pt-1">
+            <div className="flex flex-col gap-1 min-w-0 flex-1">
               <p className="text-white/30 text-xs uppercase tracking-widest">{featured.label ?? "Latest Release"}</p>
-              <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tighter leading-none uppercase">{featured.title}</h2>
-              <div className="flex gap-3 flex-wrap mt-1">
-                {featured.spotifyUrl && (
-                  <a href={featured.spotifyUrl} target="_blank" rel="noopener noreferrer" className="px-5 py-2.5 rounded-sm bg-[#1DB954] text-black font-semibold text-sm hover:opacity-90 transition-opacity tracking-wide">Spotify</a>
-                )}
-                {featured.appleUrl && (
-                  <a href={featured.appleUrl} target="_blank" rel="noopener noreferrer" className="px-5 py-2.5 rounded-sm bg-white/6 border border-white/12 text-white text-sm hover:bg-white/12 transition-all tracking-wide">Apple Music</a>
-                )}
-              </div>
+              <h2 className="font-montserrat text-2xl sm:text-3xl md:text-4xl font-black tracking-tighter leading-none uppercase truncate">{featured.title}</h2>
+            </div>
+            <div className="flex gap-2 flex-shrink-0">
+              {featured.spotifyUrl && (
+                <a href={featured.spotifyUrl} target="_blank" rel="noopener noreferrer" className="px-4 py-2 rounded-sm bg-[#1DB954] text-black font-semibold text-xs hover:opacity-90 transition-opacity tracking-wide whitespace-nowrap">Spotify</a>
+              )}
+              {featured.appleUrl && (
+                <a href={featured.appleUrl} target="_blank" rel="noopener noreferrer" className="px-4 py-2 rounded-sm text-white text-xs font-semibold hover:opacity-90 transition-opacity tracking-wide whitespace-nowrap" style={{ background: "linear-gradient(135deg, #FA233B, #FB5C74)" }}>Apple Music</a>
+              )}
             </div>
           </div>
         </FadeIn>
@@ -152,7 +177,7 @@ export default async function Home() {
               <BlurImage src={aboutImageUrl} alt="Sam Daniel" fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 50vw" />
             </div>
             <div className="flex flex-col justify-center gap-4 p-6 sm:p-8 md:p-12 bg-white/3 border border-white/6 min-w-0">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tighter uppercase">{aboutHeading}</h2>
+              <h2 className="font-montserrat text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter uppercase">{aboutHeading}</h2>
               <p className="text-white/55 leading-relaxed text-sm">{aboutText}</p>
               <Link href="/about" className="text-[#f43f8a] hover:text-[#ec4899] text-sm font-medium transition-colors tracking-wide self-start">
                 Read More →
@@ -174,7 +199,7 @@ export default async function Home() {
           <div className="flex items-center justify-between mb-8">
             <div className="flex items-center gap-4">
               <span className="text-[#f43f8a] text-xs tracking-widest uppercase font-medium">Upcoming</span>
-              <h2 className="text-xl sm:text-2xl font-bold tracking-tight uppercase">Events</h2>
+              <h2 className="font-montserrat text-xl sm:text-2xl font-bold tracking-tight uppercase">Events</h2>
             </div>
             <Link href="/events" className="text-white/35 hover:text-white text-xs tracking-widest uppercase transition-colors">View all →</Link>
           </div>
