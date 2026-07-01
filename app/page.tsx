@@ -152,7 +152,7 @@ export default async function Home() {
         <FadeIn delay={80}>
           <div className="relative w-full rounded-sm overflow-hidden border border-white/6" style={{ paddingBottom: "56.25%" }}>
             <iframe
-              src="https://www.youtube.com/embed/7oUg3xlFeRU"
+              src="https://www.youtube.com/embed/4jys9RZpACg"
               title="Sam Daniel — Featured Video"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
