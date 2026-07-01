@@ -66,7 +66,7 @@ export default async function MusicPage() {
                     </a>
                   )}
                   {r.appleUrl && (
-                    <a href={r.appleUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-sm bg-white text-black text-xs font-bold hover:opacity-90 tracking-wide">
+                    <a href={r.appleUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-sm text-white text-xs font-bold hover:opacity-90 tracking-wide" style={{ background: "linear-gradient(135deg, #FA233B, #FB5C74)" }}>
                       <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
                       <span className="hidden sm:inline">Apple Music</span>
                     </a>
