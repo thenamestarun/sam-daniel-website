@@ -81,7 +81,7 @@ export default async function Home() {
         </div>
         <div className="relative z-10 flex flex-col items-center gap-4 w-full max-w-5xl mx-auto">
           <span className="text-[#f43f8a] text-xs tracking-[0.35em] uppercase font-medium">London, UK</span>
-          <h1 className="font-montserrat text-[clamp(3.2rem,14vw,11rem)] font-bold tracking-tighter leading-[0.88] uppercase">Sam<br/>Daniel</h1>
+          <h1 className="font-montserrat text-[clamp(2.5rem,8vw,7rem)] font-bold tracking-tighter leading-none uppercase">Sam Daniel</h1>
           <p className="text-white/40 text-xs md:text-sm tracking-[0.2em] uppercase font-light px-4">{tagline}</p>
           <div className="flex flex-wrap items-center justify-center gap-3 mt-2">
             <Link href="/music" className="font-montserrat px-5 py-2.5 text-sm font-semibold tracking-wide backdrop-blur-md bg-[#f43f8a]/15 border border-[#f43f8a]/30 text-[#f43f8a] hover:bg-[#f43f8a]/25 hover:border-[#f43f8a]/50 transition-all rounded-sm">
