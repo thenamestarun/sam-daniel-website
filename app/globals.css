@@ -26,6 +26,10 @@ html {
   overflow-x: hidden;
 }
 
+@media (pointer: fine) {
+  *, *::before, *::after { cursor: none !important; }
+}
+
 body {
   background: #050505;
   color: var(--text);

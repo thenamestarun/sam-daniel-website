@@ -41,11 +41,10 @@ export default async function AboutPage() {
     <div className="pb-20">
 
       {/* Full-bleed hero */}
-      <div className="relative h-[70vh] sm:h-[80vh] overflow-hidden mb-0">
+      <div className="relative h-[70vh] sm:h-[80vh] mb-0">
         <Image src={heroImageUrl} alt="Sam Daniel" fill className="object-cover object-top" priority sizes="100vw" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/50 via-transparent to-[#050505]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent via-50% to-[#050505]" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#050505]/40 via-transparent to-[#050505]/40" />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(5,5,5,0.55) 0%, transparent 35%, rgba(5,5,5,0.6) 65%, rgba(5,5,5,1) 100%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(5,5,5,0.5) 0%, transparent 20%, transparent 80%, rgba(5,5,5,0.5) 100%)" }} />
         <div className="absolute bottom-8 sm:bottom-12 left-0 right-0 px-4 sm:px-8 max-w-6xl mx-auto">
           <p className="text-[#f43f8a] text-xs tracking-widest uppercase mb-2 font-medium">Story</p>
           <h1 className="font-montserrat text-5xl sm:text-6xl md:text-8xl font-bold tracking-tighter uppercase leading-none">About Sam</h1>

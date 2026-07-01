@@ -3,6 +3,7 @@ import { Space_Grotesk, Montserrat } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import ScrollToTop from "@/components/ScrollToTop";
+import CustomCursor from "@/components/CustomCursor";
 import Link from "next/link";
 
 const spaceGrotesk = Space_Grotesk({
@@ -39,6 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${montserrat.variable}`}>
       <body className="relative min-h-screen">
+        <CustomCursor />
         <Nav />
         <main className="relative z-10">{children}</main>
         <footer className="relative z-10 border-t border-white/6 mt-20 py-8 px-6 text-center">
