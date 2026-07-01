@@ -38,7 +38,7 @@ export default async function AboutPage() {
   ];
 
   return (
-    <div className="pt-20 pb-20">
+    <div className="pb-20">
 
       {/* Full-bleed hero */}
       <div className="relative h-[55vh] sm:h-[65vh] overflow-hidden mb-10 sm:mb-16">

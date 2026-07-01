@@ -10,10 +10,10 @@ const videos = [
 
 export default function VideosPage() {
   return (
-    <div className="pt-24 pb-24 px-4 sm:px-6 max-w-6xl mx-auto">
+    <div className="pt-28 pb-20 px-4 sm:px-6 max-w-6xl mx-auto">
       <div className="mb-10">
         <p className="text-xs tracking-widest uppercase text-[#f43f8a] mb-3 font-medium">Watch</p>
-        <h1 className="font-montserrat text-5xl sm:text-6xl font-bold tracking-tighter uppercase">Videos</h1>
+        <h1 className="font-montserrat text-5xl sm:text-6xl md:text-7xl font-bold tracking-tighter uppercase">Videos</h1>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">

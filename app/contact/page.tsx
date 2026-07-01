@@ -2,7 +2,7 @@ import FadeIn from "@/components/FadeIn";
 
 export default function ContactPage() {
   return (
-    <div className="pt-24 pb-20 px-4 sm:px-6 max-w-4xl mx-auto">
+    <div className="pt-28 pb-20 px-4 sm:px-6 max-w-4xl mx-auto">
       <FadeIn>
         <div className="mb-10">
           <p className="text-[#f43f8a] text-xs tracking-widest uppercase mb-3 font-medium">Get in Touch</p>

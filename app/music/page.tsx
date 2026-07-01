@@ -32,7 +32,7 @@ export default async function MusicPage() {
   const releases = sanityReleases.length > 0 ? sanityReleases : fallbackReleases;
 
   return (
-    <div className="pt-24 pb-20 px-4 sm:px-6 max-w-6xl mx-auto">
+    <div className="pt-28 pb-20 px-4 sm:px-6 max-w-6xl mx-auto">
       <FadeIn>
         <div className="mb-10">
           <p className="text-[#f43f8a] text-xs tracking-widest uppercase mb-3 font-medium">Discography</p>

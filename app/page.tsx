@@ -71,10 +71,10 @@ export default async function Home() {
   const displayEvents = upcomingEvents.length > 0 ? upcomingEvents : fallbackEvents;
 
   return (
-    <div className="pt-20">
+    <div>
 
       {/* Hero */}
-      <section className="relative min-h-[92vh] flex flex-col items-center justify-center text-center px-4 gap-4 overflow-hidden">
+      <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 gap-4 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image src="/images/hero.jpg" alt="Sam Daniel" fill className="object-cover object-center opacity-20" priority sizes="100vw" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-[#080808]" />

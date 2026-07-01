@@ -80,7 +80,7 @@ const team = [
 
 export default function StudioPage() {
   return (
-    <div className="pt-20 pb-24">
+    <div className="pb-24">
 
       {/* Hero */}
       <div className="relative h-[45vh] sm:h-[50vh] overflow-hidden mb-12 sm:mb-20">
