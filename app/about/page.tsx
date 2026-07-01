@@ -41,11 +41,12 @@ export default async function AboutPage() {
     <div className="pb-20">
 
       {/* Full-bleed hero */}
-      <div className="relative h-[55vh] sm:h-[65vh] overflow-hidden mb-10 sm:mb-16">
+      <div className="relative h-[70vh] sm:h-[80vh] overflow-hidden mb-0">
         <Image src={heroImageUrl} alt="Sam Daniel" fill className="object-cover object-top" priority sizes="100vw" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/60 via-transparent to-[#050505]" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#050505]/30 via-transparent to-[#050505]/30" />
-        <div className="absolute bottom-6 sm:bottom-10 left-0 right-0 px-4 sm:px-8 max-w-6xl mx-auto">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/50 via-transparent to-[#050505]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent via-50% to-[#050505]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#050505]/40 via-transparent to-[#050505]/40" />
+        <div className="absolute bottom-8 sm:bottom-12 left-0 right-0 px-4 sm:px-8 max-w-6xl mx-auto">
           <p className="text-[#f43f8a] text-xs tracking-widest uppercase mb-2 font-medium">Story</p>
           <h1 className="font-montserrat text-5xl sm:text-6xl md:text-8xl font-bold tracking-tighter uppercase leading-none">About Sam</h1>
         </div>

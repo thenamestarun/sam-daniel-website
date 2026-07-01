@@ -118,10 +118,10 @@ export default async function Home() {
               <BlurImage
                 src={featured.artworkUrl ?? "/images/music/victorious.jpg"}
                 alt={featured.title ?? "Featured"}
-                width={160}
-                height={160}
+                width={220}
+                height={220}
                 className="rounded-sm shadow-2xl"
-                sizes="160px"
+                sizes="220px"
               />
             </div>
             <div className="flex flex-col gap-2 min-w-0 flex-1">
