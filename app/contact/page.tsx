@@ -39,7 +39,7 @@ export default function ContactPage() {
                 href={s.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-5 py-2 rounded-sm border border-white/10 text-white/50 text-sm tracking-wide hover:text-white hover:border-white/25 transition-all"
+                className="px-5 py-2 rounded-sm backdrop-blur-md bg-white/8 border border-white/20 text-white text-sm tracking-wide hover:bg-white/14 transition-all"
               >
                 {s.label}
               </a>
@@ -58,7 +58,7 @@ export default function ContactPage() {
             href="https://paypal.me/officialsamdaniel"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-5 py-2.5 rounded-sm bg-[#003087] text-white text-sm font-medium tracking-wide hover:opacity-90 transition-opacity"
+            className="inline-block px-5 py-2.5 rounded-sm backdrop-blur-md bg-white/8 border border-white/20 text-white text-sm font-medium tracking-wide hover:bg-white/14 transition-all"
           >
             Donate via PayPal
           </a>
