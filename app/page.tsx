@@ -197,7 +197,7 @@ export default async function Home() {
       <section className="max-w-6xl mx-auto px-4 sm:px-6 py-8 pb-20">
         <FadeIn>
           <div className="flex items-center justify-between mb-8">
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2">
               <span className="text-[#f43f8a] text-xs tracking-widest uppercase font-medium">Upcoming</span>
               <h2 className="font-montserrat text-xl sm:text-2xl font-bold tracking-tight uppercase">Events</h2>
             </div>
@@ -209,7 +209,7 @@ export default async function Home() {
             <FadeIn key={e._id} delay={i * 50}>
               <div className="flex flex-col sm:flex-row sm:items-center justify-between px-2 py-2.5 border-b border-white/6 hover:bg-white/3 transition-all group cursor-default gap-0.5 sm:gap-0">
                 <span className="font-medium tracking-wide group-hover:text-[#f43f8a] transition-colors text-sm sm:text-base">{e.name}</span>
-                <span className="text-white/35 text-xs sm:text-sm font-light tracking-wide">{e.dateLabel ?? e.date}</span>
+                <span className="text-[#f43f8a] text-xs sm:text-sm font-light tracking-wide">{e.dateLabel ?? e.date}</span>
               </div>
             </FadeIn>
           ))}
