@@ -207,7 +207,7 @@ export default async function Home() {
         <div className="flex flex-col">
           {displayEvents.map((e: { _id: string; name: string; dateLabel?: string; date?: string }, i: number) => (
             <FadeIn key={e._id} delay={i * 50}>
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between px-2 py-4 border-b border-white/6 hover:bg-white/3 transition-all group cursor-default gap-1 sm:gap-0">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between px-2 py-2.5 border-b border-white/6 hover:bg-white/3 transition-all group cursor-default gap-0.5 sm:gap-0">
                 <span className="font-medium tracking-wide group-hover:text-[#f43f8a] transition-colors text-sm sm:text-base">{e.name}</span>
                 <span className="text-white/35 text-xs sm:text-sm font-light tracking-wide">{e.dateLabel ?? e.date}</span>
               </div>
