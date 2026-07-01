@@ -36,7 +36,7 @@ export default async function MusicPage() {
       <FadeIn>
         <div className="mb-10">
           <p className="text-[#f43f8a] text-xs tracking-widest uppercase mb-3 font-medium">Discography</p>
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tighter uppercase">Music</h1>
+          <h1 className="font-montserrat text-5xl sm:text-6xl md:text-7xl font-black tracking-tighter uppercase">Music</h1>
         </div>
       </FadeIn>
 

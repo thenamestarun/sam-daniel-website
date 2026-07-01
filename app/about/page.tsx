@@ -46,7 +46,7 @@ export default async function AboutPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/40 via-transparent to-[#050505]" />
         <div className="absolute bottom-6 sm:bottom-10 left-0 right-0 px-4 sm:px-8 max-w-6xl mx-auto">
           <p className="text-[#f43f8a] text-xs tracking-widest uppercase mb-2 font-medium">Story</p>
-          <h1 className="text-5xl sm:text-6xl md:text-8xl font-bold tracking-tighter uppercase leading-none">About Sam</h1>
+          <h1 className="font-montserrat text-5xl sm:text-6xl md:text-8xl font-black tracking-tighter uppercase leading-none">About Sam</h1>
         </div>
       </div>
 
