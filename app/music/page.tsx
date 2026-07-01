@@ -52,20 +52,20 @@ export default async function MusicPage() {
                   sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-black/75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2">
-                  {r.spotifyUrl && (
-                    <a href={r.spotifyUrl} target="_blank" rel="noopener noreferrer" className="px-3 py-1.5 rounded-sm bg-[#1DB954] text-black text-xs font-bold hover:opacity-90 tracking-wide">Spotify</a>
-                  )}
-                  {r.appleUrl && (
-                    <a href={r.appleUrl} target="_blank" rel="noopener noreferrer" className="px-3 py-1.5 rounded-sm bg-white text-black text-xs font-bold hover:opacity-90 tracking-wide">Apple</a>
-                  )}
-                </div>
               </div>
               <div>
                 <p className="text-sm font-medium leading-snug line-clamp-2 tracking-wide">{r.title}</p>
                 <span className={`inline-block mt-1 px-2 py-0.5 rounded-sm text-xs border ${typeColors[r.type] ?? typeColors.Single}`}>
                   {r.type}
                 </span>
+                <div className="flex gap-2 mt-2 flex-wrap">
+                  {r.spotifyUrl && (
+                    <a href={r.spotifyUrl} target="_blank" rel="noopener noreferrer" className="px-3 py-1.5 rounded-sm bg-[#1DB954] text-black text-xs font-bold hover:opacity-90 tracking-wide">Spotify</a>
+                  )}
+                  {r.appleUrl && (
+                    <a href={r.appleUrl} target="_blank" rel="noopener noreferrer" className="px-3 py-1.5 rounded-sm bg-white text-black text-xs font-bold hover:opacity-90 tracking-wide">Apple Music</a>
+                  )}
+                </div>
               </div>
             </div>
           </FadeIn>
