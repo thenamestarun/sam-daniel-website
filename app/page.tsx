@@ -81,7 +81,7 @@ export default async function Home() {
         </div>
         <div className="relative z-10 flex flex-col items-center gap-4 w-full max-w-5xl mx-auto">
           <span className="text-[#f43f8a] text-xs tracking-[0.35em] uppercase font-medium">London, UK</span>
-          <h1 className="font-montserrat text-[clamp(3.2rem,14vw,11rem)] font-black tracking-tighter leading-[0.88] uppercase">Sam<br/>Daniel</h1>
+          <h1 className="font-montserrat text-[clamp(3.2rem,14vw,11rem)] font-bold tracking-tighter leading-[0.88] uppercase">Sam<br/>Daniel</h1>
           <p className="text-white/40 text-xs md:text-sm tracking-[0.2em] uppercase font-light px-4">{tagline}</p>
           <div className="flex flex-wrap items-center justify-center gap-3 mt-2">
             <Link href="/music" className="font-montserrat px-5 py-2.5 text-sm font-semibold tracking-wide backdrop-blur-md bg-[#f43f8a]/15 border border-[#f43f8a]/30 text-[#f43f8a] hover:bg-[#f43f8a]/25 hover:border-[#f43f8a]/50 transition-all rounded-sm">
@@ -126,7 +126,7 @@ export default async function Home() {
             </div>
             <div className="flex flex-col gap-1 min-w-0 flex-1">
               <p className="text-white/30 text-xs uppercase tracking-widest">{featured.label ?? "Latest Release"}</p>
-              <h2 className="font-montserrat text-2xl sm:text-3xl md:text-4xl font-black tracking-tighter leading-none uppercase truncate">{featured.title}</h2>
+              <h2 className="font-montserrat text-2xl sm:text-3xl md:text-4xl font-bold tracking-tighter leading-none uppercase truncate">{featured.title}</h2>
             </div>
             <div className="flex gap-2 flex-shrink-0">
               {featured.spotifyUrl && (
@@ -177,7 +177,7 @@ export default async function Home() {
               <BlurImage src={aboutImageUrl} alt="Sam Daniel" fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 50vw" />
             </div>
             <div className="flex flex-col justify-center gap-4 p-6 sm:p-8 md:p-12 bg-white/3 border border-white/6 min-w-0">
-              <h2 className="font-montserrat text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter uppercase">{aboutHeading}</h2>
+              <h2 className="font-montserrat text-3xl sm:text-4xl md:text-5xl font-bold tracking-tighter uppercase">{aboutHeading}</h2>
               <p className="text-white/55 leading-relaxed text-sm">{aboutText}</p>
               <Link href="/about" className="text-[#f43f8a] hover:text-[#ec4899] text-sm font-medium transition-colors tracking-wide self-start">
                 Read More →

@@ -248,7 +248,7 @@ export default function EventsPage() {
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
         <div>
           <p className="text-[#f43f8a] text-xs tracking-widest uppercase mb-3 font-medium">2026 Tour</p>
-          <h1 className="font-montserrat text-5xl sm:text-6xl md:text-7xl font-black tracking-tighter uppercase">Events</h1>
+          <h1 className="font-montserrat text-5xl sm:text-6xl md:text-7xl font-bold tracking-tighter uppercase">Events</h1>
         </div>
         {past.length > 0 && (
           <SharpButton onClick={() => setShowPast(!showPast)} active={showPast}>
