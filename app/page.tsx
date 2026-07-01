@@ -44,6 +44,14 @@ function InstagramIcon() {
   );
 }
 
+function YouTubeIcon() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+    </svg>
+  );
+}
+
 export default async function Home() {
   const [homepage, allEvents] = await Promise.all([
     client.fetch(homepageQuery).catch(() => null),
@@ -97,10 +105,14 @@ export default async function Home() {
             <a href="https://music.apple.com/gb/artist/sam-daniel/1177716347" target="_blank" rel="noopener noreferrer" className="text-white/30 hover:text-white transition-colors" aria-label="Apple Music">
               <AppleMusicIcon />
             </a>
-            <a href="https://instagram.com/officialsamdaniel" target="_blank" rel="noopener noreferrer" className="text-white/30 hover:text-[#E1306C] transition-colors" aria-label="Instagram">
-              <InstagramIcon />
+            <a href="https://www.youtube.com/@samdanielmusic" target="_blank" rel="noopener noreferrer" className="text-white/30 hover:text-[#FF0000] transition-colors" aria-label="YouTube">
+              <YouTubeIcon />
             </a>
           </div>
+          <a href="https://instagram.com/officialsamdaniel" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white/25 hover:text-white/60 transition-colors text-xs tracking-widest uppercase mt-1" aria-label="Instagram">
+            <InstagramIcon />
+            <span>Follow on Instagram</span>
+          </a>
         </div>
       </section>
 
@@ -113,27 +125,28 @@ export default async function Home() {
           </div>
         </FadeIn>
         <FadeIn delay={80}>
-          <div className="flex flex-row gap-5 items-center">
+          <div className="flex flex-col sm:flex-row gap-5 sm:items-center">
             <div className="flex-shrink-0">
               <BlurImage
                 src={featured.artworkUrl ?? "/images/music/victorious.jpg"}
                 alt={featured.title ?? "Featured"}
-                width={100}
-                height={100}
-                className="rounded-sm shadow-2xl w-[72px] sm:w-[100px]"
-                sizes="100px"
+                width={160}
+                height={160}
+                className="rounded-sm shadow-2xl w-full max-w-[160px] sm:w-[130px] sm:max-w-none"
+                sizes="(max-width: 640px) 160px, 130px"
               />
             </div>
-            <div className="flex flex-col gap-2 min-w-0 flex-1">
+            <div className="flex flex-col gap-2">
               <p className="text-white/30 text-xs uppercase tracking-widest">{featured.label ?? "Latest Release"}</p>
-              <h2 className="font-montserrat text-2xl sm:text-3xl md:text-4xl font-bold tracking-tighter leading-none uppercase truncate">{featured.title}</h2>
-              <div className="flex gap-2 flex-wrap">
-              {featured.spotifyUrl && (
-                <a href={featured.spotifyUrl} target="_blank" rel="noopener noreferrer" className="px-4 py-2 rounded-sm bg-[#1DB954] text-black font-semibold text-xs hover:opacity-90 transition-opacity tracking-wide whitespace-nowrap">Spotify</a>
-              )}
-              {featured.appleUrl && (
-                <a href={featured.appleUrl} target="_blank" rel="noopener noreferrer" className="px-4 py-2 rounded-sm text-white text-xs font-semibold hover:opacity-90 transition-opacity tracking-wide whitespace-nowrap" style={{ background: "linear-gradient(135deg, #FA233B, #FB5C74)" }}>Apple Music</a>
-              )}
+              <h2 className="font-montserrat text-3xl sm:text-4xl md:text-5xl font-bold tracking-tighter leading-none uppercase">{featured.title}</h2>
+              <div className="flex gap-2 flex-wrap mt-1">
+                {featured.spotifyUrl && (
+                  <a href={featured.spotifyUrl} target="_blank" rel="noopener noreferrer" className="px-4 py-2 rounded-sm bg-[#1DB954] text-black font-semibold text-xs hover:opacity-90 transition-opacity tracking-wide whitespace-nowrap">Spotify</a>
+                )}
+                {featured.appleUrl && (
+                  <a href={featured.appleUrl} target="_blank" rel="noopener noreferrer" className="px-4 py-2 rounded-sm text-white text-xs font-semibold hover:opacity-90 transition-opacity tracking-wide whitespace-nowrap" style={{ background: "linear-gradient(135deg, #FA233B, #FB5C74)" }}>Apple Music</a>
+                )}
+                <a href="https://www.youtube.com/@samdanielmusic" target="_blank" rel="noopener noreferrer" className="px-4 py-2 rounded-sm bg-[#FF0000] text-white font-semibold text-xs hover:opacity-90 transition-opacity tracking-wide whitespace-nowrap">YouTube</a>
               </div>
             </div>
           </div>
