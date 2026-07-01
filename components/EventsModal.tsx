@@ -12,7 +12,7 @@ export function EventsButton({ events }: { events: Event[] }) {
         onClick={() => setOpen(true)}
         className="px-5 py-2.5 text-sm font-semibold tracking-wide backdrop-blur-md bg-[#f43f8a]/15 border border-white/20 text-white hover:bg-[#f43f8a]/25 transition-all rounded-sm font-montserrat"
       >
-        Events
+        Upcoming Events
       </button>
 
       {open && (
