@@ -111,7 +111,7 @@ export default function Nav() {
         }`}
         style={{ background: "rgba(8,8,8,0.97)", backdropFilter: "blur(16px)" }}
       >
-        <div className="flex flex-col justify-center h-full px-8 pt-16 gap-0">
+        <div className="flex flex-col justify-center h-full px-8 gap-0">
           {links.map((l, i) => (
             <Link
               key={l.href}
