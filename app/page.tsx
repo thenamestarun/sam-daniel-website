@@ -126,28 +126,27 @@ export default async function Home() {
           </div>
         </FadeIn>
         <FadeIn delay={80}>
-          <div className="flex flex-col sm:flex-row gap-5 sm:items-center">
+          <div className="flex flex-row gap-4 items-center">
             <div className="flex-shrink-0">
               <BlurImage
                 src={featured.artworkUrl ?? "/images/music/victorious.jpg"}
                 alt={featured.title ?? "Featured"}
-                width={160}
-                height={160}
-                className="rounded-sm shadow-2xl w-full max-w-[160px] sm:w-[130px] sm:max-w-none"
-                sizes="(max-width: 640px) 160px, 130px"
+                width={80}
+                height={80}
+                className="rounded-sm shadow-2xl w-[56px] sm:w-[80px]"
+                sizes="80px"
               />
             </div>
-            <div className="flex flex-col gap-2">
-              <p className="text-white/30 text-xs uppercase tracking-widest">{featured.label ?? "Latest Release"}</p>
-              <h2 className="font-montserrat text-3xl sm:text-4xl md:text-5xl font-bold tracking-tighter leading-none uppercase">{featured.title}</h2>
-              <div className="flex gap-2 flex-wrap mt-1">
+            <div className="flex flex-col gap-1.5 min-w-0">
+              <p className="text-white/30 text-[10px] uppercase tracking-widest">{featured.label ?? "Latest Release"}</p>
+              <h2 className="font-montserrat text-xl sm:text-3xl md:text-4xl font-bold tracking-tighter leading-none uppercase">{featured.title}</h2>
+              <div className="flex gap-2 flex-wrap">
                 {featured.spotifyUrl && (
-                  <a href={featured.spotifyUrl} target="_blank" rel="noopener noreferrer" className="px-4 py-2 rounded-sm bg-[#1DB954] text-black font-semibold text-xs hover:opacity-90 transition-opacity tracking-wide whitespace-nowrap">Spotify</a>
+                  <a href={featured.spotifyUrl} target="_blank" rel="noopener noreferrer" className="px-3 py-1.5 rounded-sm bg-[#1DB954] text-black font-semibold text-[11px] hover:opacity-90 transition-opacity tracking-wide whitespace-nowrap">Spotify</a>
                 )}
                 {featured.appleUrl && (
-                  <a href={featured.appleUrl} target="_blank" rel="noopener noreferrer" className="px-4 py-2 rounded-sm text-white text-xs font-semibold hover:opacity-90 transition-opacity tracking-wide whitespace-nowrap" style={{ background: "linear-gradient(135deg, #FA233B, #FB5C74)" }}>Apple Music</a>
+                  <a href={featured.appleUrl} target="_blank" rel="noopener noreferrer" className="px-3 py-1.5 rounded-sm text-white text-[11px] font-semibold hover:opacity-90 transition-opacity tracking-wide whitespace-nowrap" style={{ background: "linear-gradient(135deg, #FA233B, #FB5C74)" }}>Apple Music</a>
                 )}
-                <a href="https://www.youtube.com/@samdanielmusic" target="_blank" rel="noopener noreferrer" className="px-4 py-2 rounded-sm bg-[#FF0000] text-white font-semibold text-xs hover:opacity-90 transition-opacity tracking-wide whitespace-nowrap">YouTube</a>
               </div>
             </div>
           </div>
