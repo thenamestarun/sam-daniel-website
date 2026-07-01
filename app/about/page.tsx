@@ -82,10 +82,10 @@ export default async function AboutPage() {
       {/* CTA */}
       <FadeIn delay={120}>
         <div className="max-w-3xl mx-auto px-4 sm:px-6 mt-8 sm:mt-12 flex flex-col sm:flex-row gap-3">
-          <a href="mailto:info@sam-daniel.com" className="px-6 py-3 rounded-sm text-sm font-semibold text-center tracking-wide backdrop-blur-md bg-white/8 border border-white/20 text-white hover:bg-white/14 transition-all">
+          <a href="mailto:info@sam-daniel.com" className="px-6 py-3 rounded-sm text-sm font-semibold text-center tracking-wide backdrop-blur-md bg-[#f43f8a]/15 border border-[#f43f8a]/30 text-[#f43f8a] hover:bg-[#f43f8a]/25 hover:border-[#f43f8a]/50 transition-all">
             Ministry Booking
           </a>
-          <a href="https://instagram.com/officialsamdaniel" target="_blank" rel="noopener noreferrer" className="px-6 py-3 rounded-sm text-sm font-semibold text-center tracking-wide backdrop-blur-md bg-white/8 border border-white/20 text-white hover:bg-white/14 transition-all">
+          <a href="https://instagram.com/officialsamdaniel" target="_blank" rel="noopener noreferrer" className="px-6 py-3 rounded-sm text-sm font-semibold text-center tracking-wide backdrop-blur-md bg-white/5 border border-white/12 text-white/60 hover:bg-white/8 hover:text-white hover:border-white/22 transition-all">
             @officialsamdaniel
           </a>
         </div>
