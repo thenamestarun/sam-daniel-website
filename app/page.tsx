@@ -176,7 +176,7 @@ export default async function Home() {
             <div className="relative aspect-[4/3] md:aspect-auto min-h-[280px] md:min-h-[360px]">
               <BlurImage src={aboutImageUrl} alt="Sam Daniel" fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 50vw" />
             </div>
-            <div className="flex flex-col justify-center gap-4 p-6 sm:p-8 md:p-12 bg-white/3 border border-white/6 min-w-0">
+            <div className="flex flex-col justify-center gap-4 p-4 sm:p-8 md:p-12 bg-white/3 border border-white/6 min-w-0">
               <h2 className="font-montserrat text-3xl sm:text-4xl md:text-5xl font-bold tracking-tighter uppercase">{aboutHeading}</h2>
               <p className="text-white/55 leading-relaxed text-sm">{aboutText}</p>
               <Link href="/about" className="text-[#f43f8a] hover:text-[#ec4899] text-sm font-medium transition-colors tracking-wide self-start">
