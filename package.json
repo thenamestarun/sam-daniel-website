@@ -20,6 +20,11 @@
     "sanity": "^3.99.0",
     "styled-components": "^6.4.3"
   },
+  "overrides": {
+    "next-sanity": {
+      "next": "$next"
+    }
+  },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
