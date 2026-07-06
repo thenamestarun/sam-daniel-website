@@ -80,7 +80,7 @@ export default function Nav() {
               className={`text-sm tracking-wide transition-all duration-200 ${
                 pathname === l.href
                   ? "text-[#f43f8a]"
-                  : "text-white/40 hover:text-white"
+                  : "text-white/40 hover:text-[#f43f8a]"
               }`}
             >
               {l.label}
@@ -117,8 +117,8 @@ export default function Nav() {
             <Link
               key={l.href}
               href={l.href}
-              className={`py-2 text-xl font-bold tracking-tighter uppercase border-b border-white/6 transition-all duration-200 ${
-                pathname === l.href ? "text-[#f43f8a]" : "text-white/70 hover:text-white"
+              className={`py-2 text-2xl font-bold tracking-tighter uppercase border-b border-white/6 transition-all duration-200 ${
+                pathname === l.href ? "text-[#f43f8a]" : "text-white/70 hover:text-[#f43f8a]"
               }`}
               style={{ transitionDelay: mobileOpen ? `${i * 40}ms` : "0ms" }}
             >
