@@ -186,11 +186,15 @@ export default async function Home() {
           </div>
         </FadeIn>
         <FadeIn delay={80}>
-          <div className="grid md:grid-cols-2 gap-0 overflow-hidden rounded-sm">
+          <div className="grid md:grid-cols-2 gap-0 rounded-sm overflow-hidden">
             <div className="relative aspect-[4/3] md:aspect-auto min-h-[280px] md:min-h-[360px]">
               <BlurImage src={aboutImageUrl} alt="Sam Daniel" fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 50vw" />
+              {/* Fade bottom on mobile, fade right on desktop */}
+              <div className="absolute inset-0 md:hidden" style={{ background: "linear-gradient(to bottom, transparent 40%, #050505 100%)" }} />
+              <div className="absolute inset-0 hidden md:block" style={{ background: "linear-gradient(to right, transparent 50%, #050505 100%)" }} />
+              <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(5,5,5,0.3) 0%, transparent 30%)" }} />
             </div>
-            <div className="flex flex-col justify-center gap-4 p-4 sm:p-8 md:p-12 bg-white/3 border border-white/6 min-w-0">
+            <div className="flex flex-col justify-center gap-4 p-4 sm:p-8 md:p-12 min-w-0">
               <h2 className="font-montserrat text-3xl sm:text-4xl md:text-5xl font-bold tracking-tighter uppercase">{aboutHeading}</h2>
               <p className="text-white/55 leading-relaxed text-sm">{aboutText}</p>
               <Link href="/about" className="text-[#f43f8a] hover:text-[#ec4899] text-sm font-medium transition-colors tracking-wide self-start">
