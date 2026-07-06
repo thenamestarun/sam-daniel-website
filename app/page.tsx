@@ -98,24 +98,7 @@ export default async function Home() {
             </Link>
             <EventsButton events={displayEvents} />
           </div>
-          {/* Social icons */}
-          <div className="flex items-center justify-center gap-6 mt-2">
-            <a href="https://open.spotify.com/artist/5qCmiCJixflA5aXSdH8GXB" target="_blank" rel="noopener noreferrer" className="text-white/30 hover:text-[#1DB954] transition-colors" aria-label="Spotify">
-              <SpotifyIcon />
-            </a>
-            <a href="https://music.apple.com/gb/artist/sam-daniel/1177716347" target="_blank" rel="noopener noreferrer" className="text-white/30 hover:text-white transition-colors" aria-label="Apple Music">
-              <AppleMusicIcon />
-            </a>
-            <a href="https://www.youtube.com/@samdanielmusic" target="_blank" rel="noopener noreferrer" className="text-white/30 hover:text-[#FF0000] transition-colors" aria-label="YouTube">
-              <YouTubeIcon />
-            </a>
-          </div>
         </div>
-        {/* Instagram — pinned to bottom of hero */}
-        <a href="https://instagram.com/officialsamdaniel" target="_blank" rel="noopener noreferrer" className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-2 text-white/30 hover:text-white/70 transition-colors text-[10px] tracking-widest uppercase z-10" aria-label="Instagram">
-          <InstagramIcon />
-          <span>Follow on Instagram</span>
-        </a>
       </section>
 
       {/* Featured Release */}
