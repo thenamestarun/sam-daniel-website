@@ -83,20 +83,25 @@ export default function StudioPage() {
     <div className="pb-24">
 
       {/* Hero */}
-      <div className="relative h-[45vh] sm:h-[50vh] overflow-hidden mb-12 sm:mb-20">
-        <Image src="/images/studio/studio-main.png" alt="Revival Sounds Studio" fill className="object-cover object-center" priority />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/60 via-black/30 to-[#050505]" />
-        <div className="absolute bottom-6 sm:bottom-10 left-0 right-0 px-4 sm:px-8 max-w-5xl mx-auto">
-          <p className="text-xs tracking-widest uppercase text-[#f43f8a] mb-2">Revival Sounds</p>
-          <h1 className="font-montserrat text-5xl sm:text-6xl md:text-7xl font-bold tracking-tighter uppercase">Studio</h1>
+      <div className="relative pt-36 pb-16 px-4 flex flex-col items-center text-center overflow-hidden">
+        {/* Subtle background texture */}
+        <div className="absolute inset-0 z-0">
+          <Image src="/images/studio/studio-main.png" alt="" fill className="object-cover object-center opacity-10" priority />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-transparent to-[#050505]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-transparent to-[#050505]" />
+        </div>
+        <div className="relative z-10 flex flex-col items-center gap-4">
+          <p className="text-[#f43f8a] text-xs tracking-widest uppercase font-medium">London, UK</p>
+          <h1 className="font-montserrat text-5xl sm:text-6xl md:text-8xl font-bold tracking-tighter uppercase leading-none">Revival Sounds</h1>
+          <p className="text-white/35 text-sm tracking-widest uppercase mt-1">Creative Studio by Sam Daniel</p>
         </div>
       </div>
 
       {/* Intro */}
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 mb-12 sm:mb-20">
-        <p className="text-white/60 text-lg leading-relaxed">
-          Revival Sounds is Sam Daniel's creative hub — offering professional recording, production,
-          tuition, video and design services to artists, churches, and creatives. Based in London, UK.
+      <div className="max-w-2xl mx-auto px-4 sm:px-6 mb-12 sm:mb-20 text-center">
+        <p className="text-white/55 text-base sm:text-lg leading-relaxed">
+          A creative hub offering professional recording, production,
+          tuition, video and design services to artists, churches, and creatives.
         </p>
       </div>
 
