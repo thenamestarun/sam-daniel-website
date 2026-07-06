@@ -43,7 +43,11 @@ export default async function AboutPage() {
       {/* Full-bleed hero */}
       <div className="relative h-[70vh] sm:h-[80vh] mb-0">
         <Image src={heroImageUrl} alt="Sam Daniel" fill className="object-cover object-top" priority sizes="100vw" />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(5,5,5,0.55) 0%, transparent 35%, rgba(5,5,5,0.6) 65%, rgba(5,5,5,1) 100%)" }} />
+        {/* Top fade */}
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(5,5,5,0.55) 0%, transparent 25%)" }} />
+        {/* Bottom fade — fully dissolves into page bg */}
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, transparent 40%, rgba(5,5,5,0.7) 70%, rgba(5,5,5,1) 100%)" }} />
+        {/* Side fades */}
         <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(5,5,5,0.5) 0%, transparent 20%, transparent 80%, rgba(5,5,5,0.5) 100%)" }} />
         <div className="absolute bottom-8 sm:bottom-12 left-0 right-0 px-4 sm:px-8 max-w-6xl mx-auto">
           <p className="text-[#f43f8a] text-xs tracking-widest uppercase mb-2 font-medium">Story</p>
@@ -53,7 +57,7 @@ export default async function AboutPage() {
 
       {/* Bio */}
       <FadeIn>
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 flex flex-col gap-6 text-white/55 text-sm sm:text-base leading-relaxed">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 mt-12 sm:mt-16 flex flex-col gap-6 text-white/55 text-sm sm:text-base leading-relaxed">
           {data?.bioSections ? (
             <PortableText value={data.bioSections} components={portableComponents} />
           ) : (
