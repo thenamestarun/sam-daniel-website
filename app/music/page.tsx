@@ -42,7 +42,7 @@ export default async function MusicPage() {
       </FadeIn>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5">
-        {releases.map((r: typeof fallbackReleases[0], i: number) => (
+        {releases.map((r: typeof fallbackReleases[0] & { customType?: string }, i: number) => (
           <FadeIn key={r._id} delay={(i % 4) * 60}>
             <div className="group flex flex-col gap-2.5">
               <div className="relative aspect-square rounded-sm overflow-hidden bg-white/4">
