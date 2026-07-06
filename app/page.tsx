@@ -121,7 +121,7 @@ export default async function Home() {
       <section className="max-w-6xl mx-auto px-4 sm:px-6 py-8">
         <FadeIn>
           <div className="flex items-center gap-4 mb-8">
-            <span className="text-[#f43f8a] text-xs tracking-widest uppercase font-medium">Featured Release</span>
+            <span className="text-[#f43f8a] text-sm tracking-widest uppercase font-semibold">Featured Release</span>
             <div className="h-px flex-1 bg-white/6" />
           </div>
         </FadeIn>
@@ -157,7 +157,7 @@ export default async function Home() {
       <section className="max-w-6xl mx-auto px-4 sm:px-6 py-8">
         <FadeIn>
           <div className="flex items-center gap-4 mb-6">
-            <span className="text-[#f43f8a] text-xs tracking-widest uppercase font-medium">Featured Video</span>
+            <span className="text-[#f43f8a] text-sm tracking-widest uppercase font-semibold">Featured Video</span>
             <div className="h-px flex-1 bg-white/6" />
             <Link href="/videos" className="text-white/35 hover:text-white text-xs tracking-widest uppercase transition-colors flex-shrink-0">All Videos →</Link>
           </div>
@@ -180,7 +180,7 @@ export default async function Home() {
       <section className="max-w-6xl mx-auto px-4 sm:px-6 py-8">
         <FadeIn>
           <div className="flex items-center gap-4 mb-6">
-            <span className="text-[#f43f8a] text-xs tracking-widest uppercase font-medium">About</span>
+            <span className="text-[#f43f8a] text-sm tracking-widest uppercase font-semibold">About</span>
             <div className="h-px flex-1 bg-white/6" />
           </div>
         </FadeIn>
@@ -211,7 +211,7 @@ export default async function Home() {
         <FadeIn>
           <div className="flex items-center justify-between mb-8">
             <div className="flex items-center gap-2">
-              <span className="text-[#f43f8a] text-xs tracking-widest uppercase font-medium">Upcoming</span>
+              <span className="text-[#f43f8a] text-sm tracking-widest uppercase font-semibold">Upcoming</span>
               <h2 className="font-montserrat text-xl sm:text-2xl font-bold tracking-tight uppercase">Events</h2>
             </div>
             <Link href="/events" className="text-white/35 hover:text-white text-xs tracking-widest uppercase transition-colors">View all →</Link>
