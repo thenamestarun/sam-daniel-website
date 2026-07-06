@@ -49,10 +49,13 @@ export default function ContactPage() {
       </FadeIn>
 
       <FadeIn delay={160}>
-        <div className="p-7 rounded-sm bg-white/3 border border-white/6">
-          <p className="text-[#f43f8a] text-xs tracking-widest uppercase mb-3 font-medium">Support</p>
-          <p className="text-white/50 text-sm leading-relaxed mb-5">
-            10% of all donations go towards The Paalam Project — a Sri Lankan charity supporting vulnerable children.
+        <div className="p-7 rounded-sm bg-white/3 border border-white/6 mb-6">
+          <p className="text-[#f43f8a] text-xs tracking-widest uppercase mb-4 font-medium">Support Sam&apos;s Ministry</p>
+          <p className="text-white/60 text-sm leading-relaxed mb-4">
+            Sam travels across nations sharing his story, leading worship, training worship teams, training youth leaders, discipling young people, speaking at events, and releasing God&apos;s heart for people through the prophetic. Every year Sam gets to meet tens of thousands of people where he hopes his life and ministry may become of some impact. Alongside this Sam funds his own albums and mission trips whilst also supporting his family. To help support the work that he is doing, you can donate via PayPal by clicking on the button below. To make a monthly contribution please contact us on the General Enquiries form below.
+          </p>
+          <p className="text-[#f43f8a]/80 text-sm leading-relaxed mb-6">
+            10% of all donations will go towards The Paalam Project, a Sri Lankan based charity which provides care, education and homes to children who lost their families in the Tsunami, children who have been abandoned, children who have been affected by the years of conflict in North Sri Lanka, and children referred by the Jaffna courts for various reasons.
           </p>
           <a
             href="https://paypal.me/officialsamdaniel"

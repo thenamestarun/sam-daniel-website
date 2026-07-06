@@ -2,7 +2,7 @@ import { groq } from "next-sanity";
 
 export const musicQuery = groq`
   *[_type == "music"] | order(order asc) {
-    _id, title, type, spotifyUrl, appleUrl,
+    _id, title, type, customType, spotifyUrl, appleUrl,
     "imageUrl": artwork.asset->url,
   }
 `;
