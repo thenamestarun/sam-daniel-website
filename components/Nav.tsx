@@ -77,7 +77,7 @@ export default function Nav() {
               key={l.href}
               href={l.href}
               style={{ textTransform: "uppercase" }}
-              className={`font-montserrat text-sm tracking-wide transition-all duration-200 ${
+              className={`text-sm tracking-wide transition-all duration-200 ${
                 pathname === l.href
                   ? "text-[#f43f8a]"
                   : "text-white/40 hover:text-white"
@@ -117,7 +117,7 @@ export default function Nav() {
             <Link
               key={l.href}
               href={l.href}
-              className={`font-montserrat py-2 text-xl font-bold tracking-tighter uppercase border-b border-white/6 transition-all duration-200 ${
+              className={`py-2 text-xl font-bold tracking-tighter uppercase border-b border-white/6 transition-all duration-200 ${
                 pathname === l.href ? "text-[#f43f8a]" : "text-white/70 hover:text-white"
               }`}
               style={{ transitionDelay: mobileOpen ? `${i * 40}ms` : "0ms" }}
@@ -127,7 +127,7 @@ export default function Nav() {
           ))}
           <a
             href="mailto:info@sam-daniel.com"
-            className="mt-6 text-white/30 text-sm tracking-wide hover:text-white/60 transition-colors"
+            className="mt-6 text-[#f43f8a] text-sm tracking-wide hover:text-[#ec4899] transition-colors"
           >
             info@sam-daniel.com
           </a>
