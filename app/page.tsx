@@ -170,8 +170,9 @@ export default async function Home() {
         </FadeIn>
         <FadeIn delay={80}>
           <div className="grid md:grid-cols-[35%_65%] gap-0 rounded-sm overflow-hidden">
-            <div className="relative aspect-square">
+            <div className="relative aspect-square rounded-xl overflow-hidden">
               <BlurImage src={aboutImageUrl} alt="Sam Daniel" fill className="object-contain object-center" sizes="(max-width: 768px) 100vw, 35vw" />
+              <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at center, transparent 50%, #050505 100%)" }} />
             </div>
             <div className="flex flex-col justify-center gap-4 p-4 sm:p-8 md:p-12 min-w-0">
               <h2 className="font-montserrat text-3xl sm:text-4xl md:text-5xl font-bold tracking-tighter uppercase">{aboutHeading}</h2>
