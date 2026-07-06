@@ -72,15 +72,26 @@ export default function Nav() {
       <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 md:px-8 py-3 sm:py-4 md:py-5 backdrop-blur-sm bg-black/20">
 
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 z-10">
-          <Image
-            src="/images/logo.png"
-            alt="Sam Daniel"
-            width={38}
-            height={38}
-            className="object-contain w-7 sm:w-8 md:w-[38px]"
-            style={{ height: "auto" }}
-          />
+        <Link href="/" className="flex items-center gap-3 z-10 group">
+          <div className="relative w-7 sm:w-8 md:w-[38px]">
+            <Image
+              src="/images/logo.png"
+              alt="Sam Daniel"
+              width={38}
+              height={38}
+              className="object-contain w-full transition-all duration-300 group-hover:opacity-0"
+              style={{ height: "auto" }}
+            />
+            <Image
+              src="/images/logo.png"
+              alt=""
+              width={38}
+              height={38}
+              className="object-contain w-full absolute inset-0 transition-all duration-300 opacity-0 group-hover:opacity-100"
+              style={{ height: "auto", filter: "brightness(0) saturate(100%) invert(40%) sepia(80%) saturate(800%) hue-rotate(300deg) brightness(120%)" }}
+              aria-hidden
+            />
+          </div>
         </Link>
 
         {/* Desktop nav */}
