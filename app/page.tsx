@@ -5,6 +5,7 @@ import { homepageQuery, eventsQuery } from "@/sanity/lib/queries";
 import FadeIn from "@/components/FadeIn";
 import BlurImage from "@/components/BlurImage";
 import { EventsButton } from "@/components/EventsModal";
+import HomepageEvents from "@/components/HomepageEvents";
 
 const fallbackFeatured = {
   title: "Victorious",
@@ -217,16 +218,7 @@ export default async function Home() {
             <Link href="/events" className="text-white/35 hover:text-white text-xs tracking-widest uppercase transition-colors">View all →</Link>
           </div>
         </FadeIn>
-        <div className="flex flex-col">
-          {displayEvents.map((e: { _id: string; name: string; dateLabel?: string; date?: string }, i: number) => (
-            <FadeIn key={e._id} delay={i * 50}>
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between px-2 py-2.5 border-b border-white/6 hover:bg-white/3 transition-all group cursor-default gap-0.5 sm:gap-0">
-                <span className="font-medium tracking-wide group-hover:text-[#f43f8a] transition-colors text-sm sm:text-base">{e.name}</span>
-                <span className="text-[#f43f8a] text-xs sm:text-sm font-light tracking-wide">{e.dateLabel ?? e.date}</span>
-              </div>
-            </FadeIn>
-          ))}
-        </div>
+        <HomepageEvents events={displayEvents} />
       </section>
 
     </div>
