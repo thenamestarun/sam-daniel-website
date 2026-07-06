@@ -170,12 +170,8 @@ export default async function Home() {
         </FadeIn>
         <FadeIn delay={80}>
           <div className="grid md:grid-cols-[35%_65%] gap-0 rounded-sm overflow-hidden">
-            <div className="relative aspect-square md:aspect-auto min-h-[180px] md:min-h-[240px]">
-              <BlurImage src={aboutImageUrl} alt="Sam Daniel" fill className="object-cover object-[center_20%]" sizes="(max-width: 768px) 100vw, 35vw" />
-              {/* Fade bottom on mobile, fade right on desktop */}
-              <div className="absolute inset-0 md:hidden" style={{ background: "linear-gradient(to bottom, transparent 40%, #050505 100%)" }} />
-              <div className="absolute inset-0 hidden md:block" style={{ background: "linear-gradient(to right, transparent 50%, #050505 100%)" }} />
-              <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(5,5,5,0.3) 0%, transparent 30%)" }} />
+            <div className="relative aspect-square">
+              <BlurImage src={aboutImageUrl} alt="Sam Daniel" fill className="object-contain object-center" sizes="(max-width: 768px) 100vw, 35vw" />
             </div>
             <div className="flex flex-col justify-center gap-4 p-4 sm:p-8 md:p-12 min-w-0">
               <h2 className="font-montserrat text-3xl sm:text-4xl md:text-5xl font-bold tracking-tighter uppercase">{aboutHeading}</h2>
