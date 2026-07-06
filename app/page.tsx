@@ -91,7 +91,7 @@ export default async function Home() {
         <div className="relative z-10 flex flex-col items-center gap-4 w-full max-w-5xl mx-auto">
           <span className="text-[#f43f8a] text-xs tracking-[0.35em] uppercase font-medium">London, UK</span>
           <h1 className="font-montserrat text-[clamp(2.5rem,8vw,7rem)] font-bold tracking-tighter leading-none uppercase">Sam Daniel</h1>
-          <p className="text-white/40 text-[10px] md:text-sm tracking-[0.25em] md:tracking-[0.4em] uppercase font-light whitespace-nowrap">{tagline}</p>
+          <p className="text-white/40 text-[10px] md:text-sm tracking-[0.1em] md:tracking-[0.2em] uppercase font-light whitespace-nowrap">{tagline}</p>
           <div className="flex flex-wrap items-center justify-center gap-3 mt-2">
             <Link href="/music" className="px-5 py-2.5 text-sm font-semibold tracking-wide backdrop-blur-md bg-[#f43f8a]/15 border border-[#f43f8a]/30 text-[#f43f8a] hover:bg-[#f43f8a]/25 hover:border-[#f43f8a]/50 transition-all rounded-sm">
               View Music
