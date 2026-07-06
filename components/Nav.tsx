@@ -56,7 +56,7 @@ export default function Nav() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 md:px-8 py-4 md:py-5 backdrop-blur-sm bg-black/20">
+      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 md:px-8 py-3 sm:py-4 md:py-5 backdrop-blur-sm bg-black/20">
 
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 z-10">
@@ -65,8 +65,8 @@ export default function Nav() {
             alt="Sam Daniel"
             width={38}
             height={38}
-            className="object-contain"
-            style={{ width: 38, height: "auto" }}
+            className="object-contain w-7 sm:w-8 md:w-[38px]"
+            style={{ height: "auto" }}
           />
         </Link>
 
@@ -111,7 +111,7 @@ export default function Nav() {
         }`}
         style={{ background: "rgba(8,8,8,0.97)", backdropFilter: "blur(16px)" }}
       >
-        <div className="flex flex-col justify-center h-full px-8 gap-0">
+        <div className="flex flex-col justify-start h-full px-8 pt-24 gap-0">
           {links.map((l, i) => (
             <Link
               key={l.href}
