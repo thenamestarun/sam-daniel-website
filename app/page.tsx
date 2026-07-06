@@ -170,7 +170,7 @@ export default async function Home() {
         </FadeIn>
         <FadeIn delay={80}>
           <div className="grid md:grid-cols-2 gap-0 rounded-sm overflow-hidden">
-            <div className="relative aspect-[4/3] md:aspect-auto min-h-[280px] md:min-h-[360px]">
+            <div className="relative aspect-[4/3] md:aspect-auto min-h-[180px] md:min-h-[240px]">
               <BlurImage src={aboutImageUrl} alt="Sam Daniel" fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 50vw" />
               {/* Fade bottom on mobile, fade right on desktop */}
               <div className="absolute inset-0 md:hidden" style={{ background: "linear-gradient(to bottom, transparent 40%, #050505 100%)" }} />
