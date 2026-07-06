@@ -116,7 +116,7 @@ export default function Nav() {
             <Link
               key={l.href}
               href={l.href}
-              className={`font-montserrat py-2 text-xl font-bold tracking-tighter uppercase border-b border-white/6 transition-all duration-200 ${
+              className={`font-montserrat py-2 text-xl font-bold tracking-tighter border-b border-white/6 transition-all duration-200 ${
                 pathname === l.href ? "text-[#f43f8a]" : "text-white/70 hover:text-white"
               }`}
               style={{ transitionDelay: mobileOpen ? `${i * 40}ms` : "0ms" }}
@@ -126,7 +126,7 @@ export default function Nav() {
           ))}
           <a
             href="mailto:info@sam-daniel.com"
-            className="mt-6 text-white/30 text-sm tracking-widest uppercase hover:text-white/60 transition-colors"
+            className="mt-6 text-white/30 text-sm tracking-wide hover:text-white/60 transition-colors"
           >
             info@sam-daniel.com
           </a>
