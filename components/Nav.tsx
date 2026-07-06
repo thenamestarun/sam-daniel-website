@@ -76,7 +76,8 @@ export default function Nav() {
             <Link
               key={l.href}
               href={l.href}
-              className={`font-montserrat text-sm tracking-wide uppercase transition-all duration-200 ${
+              style={{ textTransform: "uppercase" }}
+              className={`font-montserrat text-sm tracking-wide transition-all duration-200 ${
                 pathname === l.href
                   ? "text-[#f43f8a]"
                   : "text-white/40 hover:text-white"
