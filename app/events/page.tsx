@@ -3,6 +3,7 @@ import { eventsQuery } from "@/sanity/lib/queries";
 import EventsList, { type Event } from "@/components/EventsList";
 
 export const dynamic = "force-dynamic";
+export const runtime = "edge";
 
 const fallbackEvents: Event[] = [
   { _id: "fallback-1", name: "Imprint Church, Croydon", date: "2026-07-11", location: "Croydon, UK", address: "Imprint Church, Croydon, UK", moreInfoLink: "mailto:info@sam-daniel.com" },

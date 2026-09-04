@@ -5,6 +5,8 @@ import { aboutQuery } from "@/sanity/lib/queries";
 import FadeIn from "@/components/FadeIn";
 import BlurImage from "@/components/BlurImage";
 
+export const runtime = "edge";
+
 const portableComponents = {
   marks: {
     link: ({ value, children }: { value?: { href: string }; children: React.ReactNode }) => (

@@ -7,6 +7,8 @@ import BlurImage from "@/components/BlurImage";
 import { EventsButton } from "@/components/EventsModal";
 import HomepageEvents from "@/components/HomepageEvents";
 
+export const runtime = "edge";
+
 const fallbackFeatured = {
   title: "Victorious",
   label: "Latest Single",

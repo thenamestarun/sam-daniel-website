@@ -3,6 +3,8 @@ import { musicQuery } from "@/sanity/lib/queries";
 import FadeIn from "@/components/FadeIn";
 import BlurImage from "@/components/BlurImage";
 
+export const runtime = "edge";
+
 const fallbackReleases = [
   { _id: "1", title: "Victorious", imageUrl: "/images/music/victorious.jpg", spotifyUrl: "https://open.spotify.com/album/7LbvUeIK4p80xbEuZoEh5l", appleUrl: "https://music.apple.com/gb/album/victorious-single/1886911197", type: "Single" },
   { _id: "2", title: "H1M", imageUrl: "/images/music/h1m.jpg", spotifyUrl: "https://open.spotify.com/album/6lPQcQHgEJyXYp1k1kISbM", appleUrl: "https://music.apple.com/gb/album/h1m/1866938005", type: "Album" },
