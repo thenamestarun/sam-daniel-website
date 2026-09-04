@@ -7,6 +7,7 @@ export type Event = {
   _id: string;
   name: string;
   date: string;
+  dateLabel?: string;
   location?: string;
   address?: string;
   time?: string;
@@ -23,7 +24,7 @@ function EventCard({ event, past }: { event: Event; past?: boolean }) {
         <div className="flex flex-col gap-1 flex-1">
           <p className={`font-semibold text-base tracking-wide ${past ? "text-white/50" : ""}`}>{event.name}</p>
           <div className="flex flex-wrap gap-x-3 gap-y-0.5 text-xs tracking-wide uppercase">
-            <span className={past ? "text-white/30" : "text-[#f43f8a]"}>{formatEventDate(event.date)}</span>
+            <span className={past ? "text-white/30" : "text-[#f43f8a]"}>{event.dateLabel || formatEventDate(event.date)}</span>
             {event.location && <><span>·</span><span>{event.location}</span></>}
             {event.time && <><span>·</span><span>{event.time}</span></>}
           </div>
