@@ -7,7 +7,7 @@ export const eventSchema = defineType({
   fields: [
     defineField({ name: "name", title: "Event Name", type: "string", validation: (r) => r.required() }),
     defineField({ name: "date", title: "Date", type: "date", validation: (r) => r.required() }),
-    defineField({ name: "dateLabel", title: "Date Label", type: "string", description: "Display text e.g. 'Sat–Sun 18–19 Jul 2026'" }),
+    defineField({ name: "dateLabel", title: "Date Range Label (optional)", type: "string", description: "Use only for a multi-day range. The website formats the Date field automatically for normal events, e.g. 'Sat 18 Jul 2026'." }),
     defineField({ name: "location", title: "Location (short)", type: "string" }),
     defineField({ name: "address", title: "Full Address", type: "string" }),
     defineField({ name: "time", title: "Time", type: "string", description: "e.g. 10:00 AM" }),
@@ -16,6 +16,6 @@ export const eventSchema = defineType({
   ],
   orderings: [{ title: "Date", name: "dateAsc", by: [{ field: "date", direction: "asc" }] }],
   preview: {
-    select: { title: "name", subtitle: "dateLabel" },
+    select: { title: "name", subtitle: "date" },
   },
 });

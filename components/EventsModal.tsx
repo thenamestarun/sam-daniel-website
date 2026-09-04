@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { formatEventDate } from "@/lib/eventDate";
 
 type Event = { _id: string; name: string; dateLabel?: string; date?: string };
 
@@ -38,7 +39,7 @@ export function EventsButton({ events }: { events: Event[] }) {
               {events.map((e) => (
                 <div key={e._id} className="flex items-center justify-between px-6 py-4 hover:bg-white/3 transition-colors">
                   <span className="font-medium text-sm tracking-wide">{e.name}</span>
-                  <span className="text-white/35 text-xs font-light tracking-wide ml-4 flex-shrink-0">{e.dateLabel ?? e.date}</span>
+                  <span className="text-white/35 text-xs font-light tracking-wide ml-4 flex-shrink-0">{e.date ? formatEventDate(e.date) : e.dateLabel}</span>
                 </div>
               ))}
             </div>

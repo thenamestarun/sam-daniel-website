@@ -29,7 +29,7 @@ const typeColors: Record<string, string> = {
 };
 
 export default async function MusicPage() {
-  const sanityReleases = await client.fetch(musicQuery).catch(() => []);
+  const sanityReleases = await client.fetch(musicQuery, {}, { cache: "no-store" }).catch(() => []);
   const releases = sanityReleases.length > 0 ? sanityReleases : fallbackReleases;
 
   return (

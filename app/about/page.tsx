@@ -29,7 +29,7 @@ const fallbackBio = [
 ];
 
 export default async function AboutPage() {
-  const data = await client.fetch(aboutQuery).catch(() => null);
+  const data = await client.fetch(aboutQuery, {}, { cache: "no-store" }).catch(() => null);
   const heroImageUrl = data?.heroImageUrl ?? "/images/about/about-1.jpg";
   const photos: string[] = data?.photos?.length ? data.photos : [
     "/images/about/about-2.jpg",

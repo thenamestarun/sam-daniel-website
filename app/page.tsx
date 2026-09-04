@@ -55,8 +55,8 @@ function YouTubeIcon() {
 
 export default async function Home() {
   const [homepage, allEvents] = await Promise.all([
-    client.fetch(homepageQuery).catch(() => null),
-    client.fetch(eventsQuery).catch(() => null),
+    client.fetch(homepageQuery, {}, { cache: "no-store" }).catch(() => null),
+    client.fetch(eventsQuery, {}, { cache: "no-store" }).catch(() => null),
   ]);
 
   const featured = homepage?.featuredRelease ?? fallbackFeatured;

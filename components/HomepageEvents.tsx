@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { formatEventDate } from "@/lib/eventDate";
 
 type Event = {
   _id: string;
@@ -18,7 +19,7 @@ export default function HomepageEvents({ events }: { events: Event[] }) {
 
   return (
     <div className="flex flex-col">
-      {events.map((e, i) => {
+      {events.map((e) => {
         const isOpen = openId === e._id;
         const hasDetails = e.location || e.time || e.address || e.description;
 
@@ -34,7 +35,7 @@ export default function HomepageEvents({ events }: { events: Event[] }) {
                 <span className={`text-base font-light transition-all duration-200 text-white/40 leading-none ${isOpen ? "text-[#f43f8a]" : ""}`}>{isOpen ? "×" : "+"}</span>
                 <span className="font-medium tracking-wide group-hover:text-[#f43f8a] transition-colors text-base sm:text-lg">{e.name}</span>
               </div>
-              <span className="text-[#f43f8a] text-xs tracking-wide uppercase pl-4 sm:pl-0">{e.dateLabel ?? e.date}</span>
+              <span className="text-[#f43f8a] text-xs tracking-wide uppercase pl-4 sm:pl-0">{e.date ? formatEventDate(e.date) : e.dateLabel}</span>
             </button>
 
             {isOpen && (
