@@ -55,11 +55,13 @@ function EventCard({ event, past }: { event: Event; past?: boolean }) {
           {!past && event.moreInfoLink && <a href={event.moreInfoLink} onClick={(click) => click.stopPropagation()} target={event.moreInfoLink.startsWith("http") ? "_blank" : undefined} rel={event.moreInfoLink.startsWith("http") ? "noopener noreferrer" : undefined} className="px-4 py-1.5 rounded-sm text-xs font-semibold tracking-widest uppercase bg-[#f43f8a]/15 border border-[#f43f8a]/30 text-[#f43f8a]">Info</a>}
         </div>
       </div>
-      {open && <div className="pb-5 grid sm:grid-cols-2 gap-4">
-        {event.address && <div><p className="text-[#f43f8a] text-xs tracking-widest uppercase mb-1 font-medium">Address</p><p className="text-white/50 text-sm">{event.address}</p></div>}
-        {event.time && <div><p className="text-[#f43f8a] text-xs tracking-widest uppercase mb-1 font-medium">Time</p><p className="text-white/50 text-sm">{event.time}</p></div>}
-        {event.description && <div className="sm:col-span-2"><p className="text-[#f43f8a] text-xs tracking-widest uppercase mb-1 font-medium">About</p><p className="text-white/50 text-sm leading-relaxed">{event.description}</p></div>}
-      </div>}
+      <div className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
+        <div className="min-h-0 overflow-hidden pb-5 grid sm:grid-cols-2 gap-4">
+          {event.address && <div><p className="text-[#f43f8a] text-xs tracking-widest uppercase mb-1 font-medium">Address</p><p className="text-white/50 text-sm">{event.address}</p></div>}
+          {event.time && <div><p className="text-[#f43f8a] text-xs tracking-widest uppercase mb-1 font-medium">Time</p><p className="text-white/50 text-sm">{event.time}</p></div>}
+          {event.description && <div className="sm:col-span-2"><p className="text-[#f43f8a] text-xs tracking-widest uppercase mb-1 font-medium">About</p><p className="text-white/50 text-sm leading-relaxed">{event.description}</p></div>}
+        </div>
+      </div>
     </div>
   );
 }

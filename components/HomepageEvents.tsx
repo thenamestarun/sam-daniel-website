@@ -38,8 +38,8 @@ export default function HomepageEvents({ events }: { events: Event[] }) {
               <span className="text-[#f43f8a] text-xs tracking-wide uppercase pl-4 sm:pl-0">{e.dateLabel || (e.date ? formatEventDate(e.date) : "")}</span>
             </button>
 
-            {isOpen && (
-              <div className="px-4 sm:px-6 pb-4 pt-2 bg-white/4 flex flex-col gap-3">
+            <div className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
+              <div className="min-h-0 overflow-hidden px-4 sm:px-6 pb-4 pt-2 bg-white/4 flex flex-col gap-3">
                 <div className="grid sm:grid-cols-2 gap-3">
                   {e.location && (
                     <div>
@@ -80,7 +80,7 @@ export default function HomepageEvents({ events }: { events: Event[] }) {
                   </a>
                 )}
               </div>
-            )}
+            </div>
           </div>
         );
       })}
