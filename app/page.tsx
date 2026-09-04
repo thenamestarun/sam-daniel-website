@@ -61,7 +61,7 @@ export default async function Home() {
     client.fetch(eventsQuery, {}, { cache: "no-store" }).catch(() => null),
   ]);
 
-  const featured = homepage?.featuredRelease ?? fallbackFeatured;
+  const featured = homepage?.featuredMusic ?? homepage?.featuredRelease ?? fallbackFeatured;
   const tagline = homepage?.heroTagline ?? "Worship Leader · Artist · Producer · Speaker";
   const aboutHeading = homepage?.aboutHeading ?? "Sam Daniel";
   const aboutText = homepage?.aboutText ?? "Sam Daniel is an independent recording artist, songwriter, producer, worship leader, and speaker. Based in London, he has been faithfully ministering around the nations since 2015 through his gift in leading spontaneous & prophetic worship.";

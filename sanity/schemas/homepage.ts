@@ -7,9 +7,18 @@ export const homepageSchema = defineType({
   fields: [
     defineField({ name: "heroTagline", title: "Hero Tagline", type: "string", description: "e.g. Worship Leader · Artist · Producer · Speaker" }),
     defineField({
+      name: "featuredMusic",
+      title: "Featured Release (select from Music)",
+      type: "reference",
+      to: [{ type: "music" }],
+      options: { disableNew: true },
+      description: "Choose a release from the Music collection. Its artwork, title and streaming links will appear automatically on the homepage.",
+    }),
+    defineField({
       name: "featuredRelease",
-      title: "Featured Release",
+      title: "Legacy Featured Release",
       type: "object",
+      hidden: true,
       fields: [
         defineField({ name: "title", title: "Title", type: "string" }),
         defineField({ name: "label", title: "Label", type: "string", description: "e.g. Latest Single" }),

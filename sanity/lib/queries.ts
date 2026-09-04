@@ -16,6 +16,10 @@ export const eventsQuery = groq`
 export const homepageQuery = groq`
   *[_type == "homepage"][0] {
     heroTagline,
+    featuredMusic->{
+      title, type, customType, spotifyUrl, appleUrl,
+      "artworkUrl": artwork.asset->url,
+    },
     featuredRelease {
       title, label, spotifyUrl, appleUrl,
       "artworkUrl": artwork.asset->url,
