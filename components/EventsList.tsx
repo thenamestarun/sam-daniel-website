@@ -42,7 +42,16 @@ function EventCard({ event, past }: { event: Event; past?: boolean }) {
           </div>
         </div>
         <div className="flex items-center gap-2 flex-shrink-0">
-          <span className="text-white/35 text-xs tracking-widest uppercase">{open ? "Close ↑" : "Details ↓"}</span>
+          <button
+            onClick={(click) => {
+              click.stopPropagation();
+              setOpen(!open);
+            }}
+            className="px-4 py-1.5 rounded-sm text-xs tracking-widest uppercase backdrop-blur-md bg-white/5 border border-white/12 text-white/40 hover:text-white/70"
+            aria-expanded={open}
+          >
+            {open ? "Close ↑" : "Details ↓"}
+          </button>
           {!past && event.moreInfoLink && <a href={event.moreInfoLink} onClick={(click) => click.stopPropagation()} target={event.moreInfoLink.startsWith("http") ? "_blank" : undefined} rel={event.moreInfoLink.startsWith("http") ? "noopener noreferrer" : undefined} className="px-4 py-1.5 rounded-sm text-xs font-semibold tracking-widest uppercase bg-[#f43f8a]/15 border border-[#f43f8a]/30 text-[#f43f8a]">Info</a>}
         </div>
       </div>
