@@ -20,7 +20,19 @@ function EventCard({ event, past }: { event: Event; past?: boolean }) {
 
   return (
     <div className={`border-b transition-all overflow-hidden ${past ? "border-white/4 opacity-40" : "border-white/8 hover:border-white/15"}`}>
-      <div className={`py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 ${open ? "pb-4" : ""}`}>
+      <div
+        className={`py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 cursor-pointer ${open ? "pb-4" : ""}`}
+        role="button"
+        tabIndex={0}
+        aria-expanded={open}
+        onClick={() => setOpen(!open)}
+        onKeyDown={(event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            setOpen(!open);
+          }
+        }}
+      >
         <div className="flex flex-col gap-1 flex-1">
           <p className={`font-semibold text-base tracking-wide ${past ? "text-white/50" : ""}`}>{event.name}</p>
           <div className="flex flex-wrap gap-x-3 gap-y-0.5 text-xs tracking-wide uppercase">
@@ -30,10 +42,8 @@ function EventCard({ event, past }: { event: Event; past?: boolean }) {
           </div>
         </div>
         <div className="flex items-center gap-2 flex-shrink-0">
-          <button onClick={() => setOpen(!open)} className="px-4 py-1.5 rounded-sm text-xs tracking-widest uppercase backdrop-blur-md bg-white/5 border border-white/12 text-white/40 hover:text-white/70" aria-expanded={open}>
-            {open ? "Close ↑" : "Details ↓"}
-          </button>
-          {!past && event.moreInfoLink && <a href={event.moreInfoLink} target={event.moreInfoLink.startsWith("http") ? "_blank" : undefined} rel={event.moreInfoLink.startsWith("http") ? "noopener noreferrer" : undefined} className="px-4 py-1.5 rounded-sm text-xs font-semibold tracking-widest uppercase bg-[#f43f8a]/15 border border-[#f43f8a]/30 text-[#f43f8a]">Info</a>}
+          <span className="text-white/35 text-xs tracking-widest uppercase">{open ? "Close ↑" : "Details ↓"}</span>
+          {!past && event.moreInfoLink && <a href={event.moreInfoLink} onClick={(click) => click.stopPropagation()} target={event.moreInfoLink.startsWith("http") ? "_blank" : undefined} rel={event.moreInfoLink.startsWith("http") ? "noopener noreferrer" : undefined} className="px-4 py-1.5 rounded-sm text-xs font-semibold tracking-widest uppercase bg-[#f43f8a]/15 border border-[#f43f8a]/30 text-[#f43f8a]">Info</a>}
         </div>
       </div>
       {open && <div className="pb-5 grid sm:grid-cols-2 gap-4">
